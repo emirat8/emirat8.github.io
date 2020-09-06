@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <title>Teori Bahasa dan Otomata</title>
+</head>
+
+<body>
+  <header>
+    <div class="jumbotron">
+      <h1>Teori Bahasa dan Otomata</h1>
+      <figure>
+        <img src="/assets/image/LogoUH.png" />
+      </figure>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div id="content">
+      <article id="history" class="card">
+        <h2>Perkenalan Ilmu TBO</h2>
+        <img src="/assets/image/enigma.jpg" class="featured-image" alt="enigma" />
+
+        <h3>Apa itu Teori Bahasa dan Otomata?</h3>
+        <p>
+          Teori Bahasa dan Otomata atau yang biasa disingkat TBO memiliki dua kata yang berbeda arti, yaitu teori bahasa
+          dan otomata. Ada baiknya bila kita mengetahui arti dari tiap kata itu terlebih dahulu.
+        </p>
+
+        <p>
+          Bahasa di dalam kamus adalah suatu sistem yang meliputi pengekspresian gagasan, fakta, konsep, termasuk
+          sekumpulan simbol-simbol dan aturan untuk melakukan manipulasinya. Bahasa bisa juga disebut sebagai rangkaian
+          simbol-simbol yang mempunyai makna. Teori bahasa juga membicarakan bahasa formal (formal language), terutama
+          untuk kepentingan perancangan kompilator (compiler) dan pemroses naskah (text processor) dalam jurusan teknik
+          informatika. Adapun bahasa formal merupakan kumpulan kalimat. Semua kalimat dalam sebuah bahasa dibangkitkan
+          oleh sebuah tata bahasa (grammar) yang sama.
+        </p>
+
+        <p>
+          Otomata merupakan mesin abstrak yang dapat mengenali, menerima, atau membangkitkan sebuah kalimat dalam bahasa
+          tertentu. Otomata juga dianggap sebagai mesin otomatis (bukan mesin fisik) yang merupakan suatu model
+          matematika dari suatu sistem yang menerima input dan menghasilkan output serta terdiri dari sejumlah berhingga
+          state. Jauh sebelum ada komputer, tahun 1930, Alan Turing mempelajari mesin abstrak yang punya kemampuan
+          seperti komputer sekarang, dikenal dengan nama Mesin Turing. Tujuan Turing adalah menggambarkan secara jelas
+          apa yang dapat dan yang tidak dapat dilakukan mesin komputing. Kemudian pada tahun 1940 an dan 1950-an,
+          ditemukan mesin abstrak yang lebih sederhana, yaitu “finite automata”. Otomata ini, asalnya diperuntukkan
+          untuk membentuk fungsi kecerdasan, berubah secara drastis untuk keperluan lain yang sangat beragam. Tahun
+          1950-an juga Chomsky mempelajari tentang “tata bahasa” formal, yang sangat berguna untuk pengembangan
+          compiler.
+        </p>
+
+        <p>
+          Hubungan di antara bahasa dan otomata adalah bahasa dijadikan sebagai input oleh suatu mesin otomata,
+          selanjutnya mesin otomata akan membuat keputusan yang mengindikasikan apakah input itu diterima atau tidak.
+        </p>
+
+        <p>
+          Ilmu komputer mempunyai dua komponen utama :
+        </p>
+
+        <ol start="1" type="1">
+          <li>
+            Model dan gagasan mengenai komputasi, dan</li>
+          <li>
+            Teknik rekayasa untuk perancangan sistem komputasi, yang meliputi perangkat keras dan perangkat lunak.</li>
+        </ol>
+
+        <p>Nah, dari kedua komponen utama tersebut, Teori Bahasa dan Otomata merupakan bagian dari komponen pertama.</p>
+
+        <h3>Apa tujuan mempelajari Teori Bahasa dan Otomata?</h3>
+
+        <p>Secara garis besar ada dua fungsi otomata dalam hubungannya dengan bahasa, yaitu :</p>
+
+        <ol start="1" type="1">
+          <li>
+            Fungsi otomata sebagai pengenal (RECOGNIZER) string-string dari suatu bahasa, dalam hal ini bahasa sebagai
+            masukan dari otomata.</li>
+          <li>
+            Fungsi otomata sebagai pembangkit (GENERATOR) string-string dari suatu bahasa, dalam hal ini bahasa sebagai
+            keluaran dari otomata.</li>
+        </ol>
+
+        <p>Kedua teori ini juga dipelajari guna memberikan konsep dan prinsip yang menolong untuk memahami arti kata
+          “perilaku” dari suatu disiplin ilmu. Teori ini akan sangat dirasakan manfaat langsungnya apabila nantinya akan
+          mempelajari mata kuliah teknik kompilasi kedepannya.
+        </p>
+
+        <h3>Contoh Penerapan Ilmu Teori Bahasa dan Otomata</h3>
+
+        <p>Contoh penggunaan otomata dan bahasa adalah dalam aplikasi asisten pada smartphone, yaitu Siri dari Apple dan
+          Cortana dari Microsoft.
+        </p>
+
+        <p>Siri adalah perangkat lunak yang dikembangkan oleh perusahaan asal Amerika Serikat, Apple, yang menggunakan
+          perintah atau input suara. Aplikasi ini diterapkan pada perangkat smartphone milik Apple, yaitu iPhone. Ketika
+          pengguna iPhone memerintahkan secara suara, iPhone akan menangkap suara ini, merubahnya menjadi file biner dan
+          kemudian mengirimnya melalui jaringan internet ke server Apple di Amerika Serikat. Di server ini, suara ini
+          akan diolah menjadi perintah yang sesuai dengan keperluan pengguna.
+        </p>
+
+        <p>Sama seperti Siri, Cortana adalah aplikasi perintah suara, dan aplikasi ini dikembangkan oleh Microsoft
+          sebagai pesaing dari Siri. Prinsip kerja Cortana mirip dengan Siri. Cortana terdapat di perangkat yang
+          menggunakan sistem operasi Windows 10.
+        </p>
+
+        <p>Penggunaan mesin ATM merupakan contoh lain dalam teori bahasa dan otomata. Suatu mesin ATM meminta dan
+          membaca input dari user, lalu mencocokkannya dalam database bank dan menghasilkan output berupa uang yang
+          diminta atau keterangan lain.
+        </p>
+      </article>
+    </div>
+
+    <aside>
+      <article class="profile card">
+        <header>
+          <h2>Emirat Millenium Try</h2>
+          <figure>
+            <img src="/assets/image/ppweb.jpg" />
+          </figure>
+        </header>
+        <section>
+          <h3>Other Information</h3>
+          <table>
+            <tr>
+              <th>Nationality</th>
+              <td>Indonesia</td>
+            </tr>
+            <tr>
+              <th>Place of Birth</th>
+              <td>Makassar, Indonesia</td>
+            </tr>
+            <tr>
+              <th>Age</th>
+              <td>20 Years Old</td>
+            </tr>
+            <tr>
+              <th>Phone Number</th>
+              <td>+62 85155477419</td>
+            </tr>
+            <tr>
+              <th>Email</th>
+              <td>
+                <a href="mailto:emirat.millenium@yahoo.co.id">emirat.millenium@yahoo.co.id</a>
+              </td>
+            </tr>
+          </table>
+        </section>
+        <social>
+          <a href="https://www.facebook.com/emirat8/" class="fa fa-facebook"></a>
+          <a href="https://twitter.com/emirat8" class="fa fa-twitter"></a>
+          <a href="https://www.instagram.com/emirat8/" class="fa fa-instagram"></a>
+          <a href="https://www.linkedin.com/in/emirat-millenium-try-739161186" class="fa fa-linkedin"></a>
+        </social>
+      </article>
+    </aside>
+  </main>
+  <footer>
+    <p>Made with ❤ in Makassar</p>
+  </footer>
+</body>
+
+</html>

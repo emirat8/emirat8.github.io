@@ -106,6 +106,52 @@ aside article section table tr th {
   text-align: left;
 }
 
+/* Style all font awesome icons */
+aside article social {
+  padding-left: 23%;
+}
+
+.fa {
+  margin-top: 5% !important;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+  background: #034694;
+  color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+  background: #034694;
+  color: white;
+}
+
+.fa-instagram {
+  background: #034694;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #034694;
+  color: white;
+}
+
+main div article readmore {
+  text-align: right;
+}
 @media screen and (max-width: 1000px) {
   #content,
   aside {
