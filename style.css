@@ -108,14 +108,15 @@ aside article section table tr th {
 
 /* Style all font awesome icons */
 aside article social {
-  padding-left: 23%;
+  display: table;
+  margin : auto;
 }
 
 .fa {
   margin-top: 5% !important;
+  margin-left: 5px;
   padding: 20px;
   font-size: 30px;
-  text-align: center;
   text-decoration: none;
   border-radius: 50%;
 }
@@ -144,7 +145,7 @@ aside article social {
   color: white;
 }
 
-.fa-linkedin {
+.fa-github {
   background: #034694;
   color: white;
 }
