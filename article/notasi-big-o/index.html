@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>Notasi Big-O</title>
+</head>
+
+<body>
+    <header>
+        <div class="jumbotron">
+            <h1>EmiratZ</h1>
+            <figure>
+                <img src="/assets/image/LogoUH.png" />
+            </figure>
+            <p>This blog is a place to collect my personal assignments. Thanks.</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="content">
+            <article id="notasi-big-o" class="card">
+                <h2>Notasi Big-O</h2>
+                <img src="/assets/image/time.jpg" class="featured-image" alt="time" />
+
+                <p>
+                    Ketika kita memikirkan apakah barisan kode yang kita ciptakan sudah cukup cepat atau
+                    efisien dalam memecahkan masalah yang ingin kita pecahkan, maka kita butuh sebuah metodologi untuk
+                    menghitungnya. Nah, kali ini kita akan membahas salah satu alat yang dapat digunakan sebagai
+                    metodologi untuk menghitungnya, yaitu notasi O besar atau <em>Big-O Notation</em>. untuk lebih
+                    jelasnya simak penjelasan di bawah ini.
+                </p>
+
+                <h3>
+                    Apa itu Notasi Big-O?
+                </h3>
+
+                <p>
+                    Programmer yang baik akan menggunakan cara yang paling efektif dan efisien dalam menyelesaikan suatu
+                    permasalahan. Dan untuk bisa melakukan hal tersebut, kita harus bisa meminimalisir kompleksitas dari
+                    algoritma yang kita gunakan.
+                </p>
+
+                <p>
+                    Kompleksitas suatu algoritma dibagi menjadi 2, yaitu <strong>Time Complexity</strong> dan
+                    <strong>Space Complexity</strong>. Namun, untuk saat ini kita hanya akan membahas mengenai Time
+                    Complexity dimana itu merupakan suatu cara analisa sederhana untuk mengetahui berapa lama waktu yang
+                    dibutuhkan untuk menjalankan suatu algoritma dengan input tertentu (n). Time complexity inilah yang
+                    populernya disebut Notasi Big-O
+                </p>
+
+                <p>
+                    Notasi O besar atau yang lazim disebut dengan Big-O Notation adalah cara untuk mengkonversi
+                    keseluruhan langkah-langkah suatu algoritma kedalam bentuk <strong>Aljabar</strong>, yaitu dengan
+                    menghiraukan konstanta yang lebih kecil dan koefisien yang tidak berdampak besar terhadap
+                    keseluruhan kompleksitas permasalahan yang diselesaikan oleh algoritma tersebut. Notasi Big-O ini
+                    merupakan skenario terburuk dari sebuah algoritma, dan biasanya terdapat notasi n yang
+                    merepresentasikan jumlah masukan. Notasi Big-O juga merupakan notasi yang paling terkenal dan paling
+                    banyak digunakan pada kalangan peneliti ilmu komputer.
+                </p>
+
+                <h3>
+                    Kegunaan Notasi Big-O
+                </h3>
+
+                <p>
+                    Notasi Big-O digunakan untuk mengukur tingkat kompleksitas suatu algoritma demi
+                    mengefisienkan algoritma itu sendiri. Notasi Big-O juga dapat merepresentasikan laju pertumbuhan
+                    (growth rate). selain daripada itu, Notasi Big-O juga berguna untuk membandingkan beberapa algoritma
+                    untuk masalah yang sama demi menentukan yang terbaik. contohnya seperti masalah pengurutan yang
+                    memiliki banyak metode/algoritma penyelesaian.
+                </p>
+
+                <p>
+                    <em>Selection sort</em>, <em>insertion sort&nbsp;</em>-&gt; T(n) = O(n<sup>2</sup>)<br><em>Quick
+                        sort</em> -&gt; T(n) = O (n log n)
+                </p>
+
+                <p>
+                    Karena n log n &lt; n<sup>2</sup> untuk n yang besar, maka algoritma quick sort lebih cepat (lebih
+                    baik) daripada algoritma selection sort ataupun insertion sort.
+                </p>
+
+                <p>
+                    Jadi, nantinya kompleksitas algoritma akan dinilai dengan Notasi Big O yang terdiri dari seberapa
+                    lama algoritma itu berjalan (time complexity), dan seberapa banyak memori yang akan dipakai oleh
+                    algoritma itu (space complexity).
+                </p>
+
+                <p>
+                    Dengan memahami Big-O Notation, kita akan lebih mudah dalam melihat mana algoritma yang lebih
+                    efisien yang bisa kita gunakan untuk menyelesaikan permasalahan yang sedang dihadapi.
+                </p>
+
+                <h3>
+                    Contoh Notasi Big-O
+                </h3>
+
+                <p>
+                    <strong>1. O(1) &mdash; Constant Time</strong><br>Constant Time artinya banyaknya input yang
+                    diberikan kepada sebuah algoritma, tidak akan mempengaruhi waktu proses (<em>runtime</em>) dari
+                    algoritma tersebut.
+                </p>
+
+                <p>
+                    <strong>2. O(log n) &mdash; Logarithmic Time</strong><br>&nbsp;Logarithmic Time artinya ketika kita
+                    memberikan input sebesar n terhadap sebuah fungsi, jumlah tahapan yang dilakukan oleh fungsi
+                    tersebut berkurang berdasarkan suatu faktor.
+                </p>
+
+                <p>
+                    <strong>3. O(n) &mdash; Linear Time</strong><br>Linear Time<strong>&nbsp;</strong>adalah
+                    ketika&nbsp;runtime<em>&nbsp;</em>dari fungsi kita berbanding lurus dengan jumlah input yang
+                    diberikan.
+                </p>
+
+                <p>
+                    <strong>4. O(n<sup>2</sup>) &mdash; Quadratic Time</strong><br>Quadratic Time adalah ketika runtime
+                    dari fungsi kita adalah sebesar n<sup>2</sup>, dimana n adalah jumlah input dari fungsi tersebut.
+                </p>
+
+                <p>
+                    <strong>5. (2<sup>n</sup>) &mdash;Exponential Time</strong><br>Exponential Time biasanya digunakan
+                    dalam situasi dimana kita tidak terlalu tahu terhadap permasalahan yang dihadapi, sehingga
+                    mengharuskan kita mencoba setiap kombinasi dan permutasi dari semua kemungkinan.
+                </p>
+            </article>
+        </div>
+
+        <aside>
+            <article class="profile card">
+                <header>
+                    <h2>Emirat Millenium Try</h2>
+                    <figure>
+                        <img src="/assets/image/ppweb.jpg" />
+                    </figure>
+                </header>
+                <section>
+                    <h3>Other Information</h3>
+                    <table>
+                        <tr>
+                            <th>Nationality</th>
+                            <td>Indonesia</td>
+                        </tr>
+                        <tr>
+                            <th>Place of Birth</th>
+                            <td>Makassar, Indonesia</td>
+                        </tr>
+                        <tr>
+                            <th>Age</th>
+                            <td>20 Years Old</td>
+                        </tr>
+                        <tr>
+                            <th>Phone Number</th>
+                            <td>+62 85155477419</td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td id="email">
+                                <a href="mailto:emirat.millenium@yahoo.co.id">emirat.millenium@yahoo.co.id</a>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+                <social>
+                    <a href="https://www.facebook.com/emirat8/" class="fa fa-facebook"></a>
+                    <a href="https://twitter.com/emirat8" class="fa fa-twitter"></a>
+                    <a href="https://www.instagram.com/emirat8/" class="fa fa-instagram"></a>
+                    <a href="https://www.github.com/emirat8/" class="fa fa-github"></a>
+                </social>
+            </article>
+        </aside>
+    </main>
+    <footer>
+        <p>Made with ❤️ in Makassar</p>
+    </footer>
+</body>
+
+</html>
