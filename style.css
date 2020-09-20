@@ -113,7 +113,7 @@ aside article social {
 }
 
 .fa {
-  margin-top: 5%;
+  margin-top: 10%;
   margin-left: 10px;
   padding: 20px;
   font-size: 30px;
@@ -129,7 +129,7 @@ aside article social {
 /* Set a specific color for each brand */
 
 /* Facebook */
-.fa-facebook {
+.fa-facebook-square {
   background: #034694;
   color: white;
 }
@@ -147,6 +147,16 @@ aside article social {
 
 .fa-github {
   background: #034694;
+  color: white;
+}
+
+.fa-arrow-up {
+  opacity: 0.5;
+  right: 2%;
+  bottom: 2%;
+  position: fixed;
+  float: right;
+  background: grey;
   color: white;
 }
 
