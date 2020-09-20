@@ -160,6 +160,10 @@ aside article social {
   color: white;
 }
 
+.fa-arrow-up:hover {
+  opacity: 0.2;
+}
+
 main div article readmore {
   text-align: right;
 }
