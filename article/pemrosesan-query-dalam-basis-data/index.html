@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/script.js"></script>
+    <title>Pemrosesan Query dalam Basis Data</title>
+</head>
+
+<body>
+    <header>
+        <div class="jumbotron">
+            <h1>EmiratZ</h1>
+            <figure>
+                <img src="/assets/image/LogoUH.png" />
+            </figure>
+            <p><i>It's something unpredictable, but in the end it's right.</i></p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="content">
+            <article id="pemrosesan-query-dalam-basis-data" class="card">
+                <h2>Pemrosesan Query dalam Basis Data</h2>
+                <img src="/assets/image/database.jpeg" class="featured-image" alt="database" />
+
+                <h3>Apa itu Query?</h3>
+
+                <p>
+                    <strong>Query</strong> berasal dari bahasa inggris yang berarti <strong>permintaan akan
+                        informasi</strong>. Lantas, apakah query dalam bahasa pemrograman memiliki artian yang sama?
+                </p>
+
+                <p>
+                    Jadi, pada dasarnya, arti query dalam bahasa inggris dan bahasa pemrograman memiliki arti yang sama.
+                    Query dalam bahasa pemrograman berarti informasi yang diterima atau diambil dari database. Pada saat
+                    membuat query pun tidak boleh asal-asalan. Query ditulis berdasarkan pada sekumpulan <i>pre-defined
+                        code</i> sehingga database dapat memahami instruksi yang diminta. Nah, kode-kode tersebutlah
+                    yang kita
+                    sebut sebagai <strong>bahasa query</strong>.
+                </p>
+
+                <p>
+                    Database juga menerapkan sebuah standar manajemen yang disebut sebagai <strong>Structure Query
+                        Language</strong> atau dapat disingkat dengan <strong>SQL</strong>. Perlu diketahui bahwa SQL
+                    dan MySQL merupakan dua hal yang berbeda. SQL merupakan bahasa query, sedangkan MySQL berupa
+                    software yang menggunakan bahasa tersebut.
+                </p>
+
+                <h3>Tahapan Pemrosesan Query</h3>
+
+                <p>
+                    Tahapan-tahapan proses dari sebuah query di dalam sistem database akan saya uraikan di bawah ini:
+                </p>
+
+                <img src="/assets/image/tahapan-pemrosesan-query.png" alt=""
+                    style="display: block; margin-left: auto; margin-right: auto;">
+
+                <p>
+                <ol start="1" type="1">
+                    <li style="margin-top: 5px;">
+                        <strong>Scanner —</strong> melakukan identifikasi (pengenalan) token-token seperti SQL keywords,
+                        attribute, dan
+                        selation name. Proses ini sebut dengan scanning.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        <strong>Query Parser —</strong> mengecek kevalidan query dan kemudian menerjemahkannya ke dalam
+                        sebuah bentuk
+                        internal yaitu ekspresi relasi aljabar atau parse tree. Proses ini disebut dengan parsing.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        <strong>Query Optimizer —</strong> memeriksa semua ekspresi-ekspresi aljabar yang sama untuk
+                        query yang diberikan
+                        dan memilih salah satu dari ekspresi tersebut yang terbaik yang memiliki perkiraan termurah.
+                        Dengan kata lain, tugas dari query optimizer adalah menghasilkan sebuah rencana eksekusi. Proses
+                        ini disebut dengan optimisasi query.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        <strong>Code Generator / Interpreter —</strong> mentransformasikan rencana akses yang dihasilkan
+                        oleh optimizer
+                        ke dalam kode-kode. setelah itu, kode-kode tersebut dikirimkan ke dalam query processor untuk
+                        dijalankan.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        <strong>Query Processor —</strong> melakukan eksekusi query untuk mendapatkan hasil query yang
+                        diinginkan.
+                    </li>
+                </ol>
+                </p>
+
+                <h3>Pengukuran Biaya Query</h3>
+
+                <p>
+                    Biaya evaluasi query dapat diukur dari banyaknya sumber daya (resource) sistem yang digunakan.
+                    Sumber daya yang dimaksud meliputi pengaksesan disk, waktu CPU mengerjakan query, dan untuk sistem
+                    basis data paralel atau terdistribusi. Adapun pada sistem basis data yang besar, dapat pula
+                    memberikan kontribusi biaya query yang dominan.
+                </p>
+
+                <p>
+                    Optimizer query akan membuat informasi statistik yang tersimpan dalam katalog DBMS untuk
+                    memperkirakan besarnya biaya dari sebuah rencana query. Adapun informasi yang tersimpan tersebut
+                    meliputi:
+                </p>
+
+                <p>
+                <ol start="1" type="1">
+                    <li style="margin-top: 5px;">
+                        Banyaknya baris data (record) dalam sebuah tabel.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        Banyaknya blok baris berisi baris data dalam tabel.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        Ukuran setiap baris data dari tabel (satuan byte).
+                    </li>
+                    <li style="margin-top: 5px;">
+                        Banyaknya nilai unik dalam tabel untuk suatu atribut.
+                    </li>
+                </ol>
+                </p>
+
+                <h3>Evaluasi Ekspresi</h3>
+
+                <p>
+                    Sejauh ini, kita telah mempelajari bagaimana operasi relasional secara individu dilakukan. Sekarang
+                    waktunya kita untuk mempertimbangkan bagaimana mengevaluasi sebuah ekspresi yang mengandung beberapa
+                    operasi. Evaluasi ekspresi dapat dilakukan dengan 2 metode, yaitu melalui pendekatan
+                    <strong>materialization</strong> dan pendekatan <strong>pipelining</strong>.
+                </p>
+
+                <p>
+                    Dalam metode <strong>materialization</strong>, ekspresi yang diberikan mengevaluasi satu operasi
+                    relasional dalam satu waktu.
+                    Selain itu, setiap operasi dievaluasi dalam urutan atau urutan yang sesuai. Setelah mengevaluasi
+                    semua operasi, keluarannya diwujudkan dalam hubungan sementara untuk penggunaan selanjutnya. Ini
+                    membawa metode materialisasi ke kerugian. Kerugiannya adalah bahwa ia perlu membangun hubungan
+                    sementara tersebut untuk mewujudkan hasil operasi yang dievaluasi, masing-masing. Hubungan sementara
+                    ini ditulis pada disk kecuali ukurannya kecil.
+                </p>
+
+                <p>
+                    Dalam metode <strong>pipelining</strong>, ini memungkinkan kita untuk mengevaluasi setiap operasi
+                    relasional ekspresi secara
+                    bersamaan dalam pipeline. Dalam pendekatan ini, setelah mengevaluasi satu operasi, keluarannya
+                    diteruskan ke operasi berikutnya, dan rantai berlanjut hingga semua operasi relasional dievaluasi
+                    secara menyeluruh. Dengan demikian, tidak ada persyaratan untuk menyimpan hubungan sementara dalam
+                    pemipaan. Keuntungan pipelining seperti itu membuatnya menjadi pendekatan yang lebih baik
+                    dibandingkan dengan pendekatan yang digunakan dalam metode materialisasi. Bahkan biaya dari kedua
+                    pendekatan tersebut dapat memiliki perbedaan selanjutnya di antara keduanya. Namun, kedua pendekatan
+                    tersebut menjalankan peran terbaik dalam kasus yang berbeda. Dengan demikian, kedua cara tersebut
+                    layak di tempatnya.
+                </p>
+            </article>
+        </div>
+
+        <aside>
+            <article class="profile card">
+                <header>
+                    <h2>Emirat Millenium Try</h2>
+                    <figure>
+                        <img src="/assets/image/ppweb.jpg" />
+                        <p><small><i>Chelsea fanboy xixixixi</i></small></p>
+                    </figure>
+                </header>
+                <section>
+                    <h3>Other Information</h3>
+                    <table>
+                        <tr>
+                            <th>Nationality</th>
+                            <td>Indonesia</td>
+                        </tr>
+                        <tr>
+                            <th>Place of Birth</th>
+                            <td>Makassar, Indonesia</td>
+                        </tr>
+                        <tr>
+                            <th>Age</th>
+                            <td>20 Years Old</td>
+                        </tr>
+                        <tr>
+                            <th>Phone Number</th>
+                            <td>+62 85155477419</td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td id="email">
+                                <a href="mailto:emirat.millenium@yahoo.co.id">emirat.millenium@yahoo.co.id</a>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+                <social>
+                    <a href="https://www.facebook.com/emirat8/" class="fa fa-facebook-square"></a>
+                    <a href="https://twitter.com/emirat8" class="fa fa-twitter"></a>
+                    <a href="https://www.instagram.com/emirat8/" class="fa fa-instagram"></a>
+                    <a href="https://www.github.com/emirat8/" class="fa fa-github"></a>
+                </social>
+            </article>
+        </aside>
+        <a href="#top" onclick="scrollToTop();return false"><i class="fa fa-arrow-up"></i></a>
+    </main>
+    <footer>
+        <p>Made with ❤️ in Makassar</p>
+    </footer>
+</body>
+
+</html>
