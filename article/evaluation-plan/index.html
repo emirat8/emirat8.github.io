@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/script.js"></script>
+    <title>Evaluation Plan</title>
+</head>
+
+<body>
+    <header>
+        <div class="jumbotron">
+            <h1>EmiratZ</h1>
+            <figure>
+                <img src="/assets/image/LogoUH.png" />
+            </figure>
+            <p><i>It's something unpredictable, but in the end it's right.</i></p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="content">
+            <article id="evaluation-plan" class="card">
+                <h2>Evaluation Plan</h2>
+                <img src="/assets/image/evaluasi.jpg" class="featured-image" alt="evaluasi" />
+
+                <p>
+                    Evaluation Plan diperlukan untuk mendefinisikan dengan tepat algoritma apa yang harus digunakan
+                    untuk setiap operasi, dan bagaimana pelaksanaan operasi harus dikoordinasikan. Pada gambar
+                    mengilustrasikan satu rencana evaluasi yang mungkin untuk ekspresi beberapa algoritme berbeda dapat
+                    digunakan untuk setiap operasi relasional, sehingga memunculkan rencana evaluasi alternatif.
+                    Selanjutnya, keputusan tentang pipelining harus dibuat.
+                </p>
+
+                <h3>MySQL</h3>
+                <p>
+                    Kata EXPLAIN merupakan kunci digunakan di berbagai database SQL dan memberikan informasi tentang
+                    bagaimana database SQL Anda menjalankan kueri. Dalam MySQL, EXPLAIN dapat digunakan di depan query
+                    dimulai dengan SELECT, INSERT, DELETE, REPLACE, dan UPDATE. Untuk kueri sederhana, akan terlihat
+                    seperti berikut:
+                </p>
+                <img src="/assets/image/evaluation-plan-1.jpg" alt="">
+
+                <p>
+                    Alih-alih keluaran hasil biasa, MySQL kemudian akan menunjukkan rencana eksekusi pernyataannya
+                    dengan menjelaskan proses mana yang terjadi dalam urutan apa saat menjalankan pernyataan tersebut.
+                </p>
+            </article>
+        </div>
+
+        <aside>
+            <article class="profile card">
+                <header>
+                    <h2>Emirat Millenium Try</h2>
+                    <figure>
+                        <img src="/assets/image/ppweb.jpg" />
+                    </figure>
+                </header>
+                <section>
+                    <h3>Other Information</h3>
+                    <table>
+                        <tr>
+                            <th>Nationality</th>
+                            <td>Indonesia</td>
+                        </tr>
+                        <tr>
+                            <th>Place of Birth</th>
+                            <td>Makassar, Indonesia</td>
+                        </tr>
+                        <tr>
+                            <th>Age</th>
+                            <td>20 Years Old</td>
+                        </tr>
+                        <tr>
+                            <th>Phone Number</th>
+                            <td>+62 85155477419</td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td id="email">
+                                <a href="mailto:emirat.millenium@yahoo.co.id">emirat.millenium@yahoo.co.id</a>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+                <social>
+                    <a href="https://www.facebook.com/emirat8/" class="fa fa-facebook-square"></a>
+                    <a href="https://twitter.com/emirat8" class="fa fa-twitter"></a>
+                    <a href="https://www.instagram.com/emirat8/" class="fa fa-instagram"></a>
+                    <a href="https://www.github.com/emirat8/" class="fa fa-github"></a>
+                </social>
+            </article>
+        </aside>
+        <a href="#top" onclick="scrollToTop();return false"><i class="fa fa-arrow-up"></i></a>
+    </main>
+    <footer>
+        <p>Made with ❤️ in Makassar</p>
+    </footer>
+</body>
+
+</html>
