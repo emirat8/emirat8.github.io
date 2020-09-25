@@ -33,6 +33,12 @@ h3 {
   object-position: center;
 }
 
+.article-image {
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto;
+}
+
 .profile header {
   text-align: center;
 }
@@ -182,6 +188,11 @@ main div article readmore {
   }
   #email {
     font-size: medium;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .article-image{
+    width: 100%;
   }
 }
 

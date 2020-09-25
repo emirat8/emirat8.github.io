@@ -33,7 +33,7 @@
         <div id="content">
             <article id="evaluation-plan" class="card">
                 <h2>Evaluation Plan</h2>
-                <img src="/assets/image/evaluasi.jpg" class="featured-image" alt="evaluasi" />
+                <img src="/assets/image/evaluasi.jpeg" class="featured-image" alt="evaluasi" />
 
                 <p>
                     Evaluation Plan diperlukan untuk mendefinisikan dengan tepat algoritma apa yang harus digunakan
@@ -44,18 +44,238 @@
                 </p>
 
                 <h3>MySQL</h3>
+
                 <p>
                     Kata EXPLAIN merupakan kunci digunakan di berbagai database SQL dan memberikan informasi tentang
                     bagaimana database SQL Anda menjalankan kueri. Dalam MySQL, EXPLAIN dapat digunakan di depan query
                     dimulai dengan SELECT, INSERT, DELETE, REPLACE, dan UPDATE. Untuk kueri sederhana, akan terlihat
                     seperti berikut:
                 </p>
-                <img src="/assets/image/evaluation-plan-1.jpg" alt="">
+
+                <img src="/assets/image/evaluation-plan-1.jpg" alt="" class="article-image">
 
                 <p>
                     Alih-alih keluaran hasil biasa, MySQL kemudian akan menunjukkan rencana eksekusi pernyataannya
                     dengan menjelaskan proses mana yang terjadi dalam urutan apa saat menjalankan pernyataan tersebut.
                 </p>
+
+                <p>
+                    EXPLAIN untuk memperbaiki kueri yang lambat dengan cepat. Meskipun dapat membantu , ini tidak akan
+                    menghilangkan kebutuhan akan pemikiran struktural dan gambaran umum yang baik tentang model data
+                    yang ada. Seringkali, perbaikan paling sederhana dan saran tercepat adalah menambahkan indeks ke
+                    kolom tabel tertentu yang dipermasalahkan jika indeks digunakan dalam banyak kueri dengan masalah
+                    kinerja. Berhati-hatilah; jangan menggunakan terlalu banyak indeks karena mungkin akan kontra
+                    produktif. Membaca indeks dan tabel hanya masuk akal jika tabel memiliki jumlah baris yang
+                    signifikan dan Anda hanya memerlukan beberapa titik data. Jika Anda mengambil sekumpulan hasil yang
+                    sangat besar dari tabel dan sering menanyakan kolom yang berbeda, indeks pada setiap kolom tidak
+                    masuk akal dan menghalangi kinerja lebih dari itu membantu.
+                </p>
+
+                <p>
+                    Explaining the original EXPLAIN
+                </p>
+
+                <img src="/assets/image/evaluation-plan-2.jpg" alt="" class="article-image">
+
+                <p>
+                    Sebelum terburu-buru untuk mengoptimalkan kueri, mari kita lihat lebih dekat keluaran dari perintah
+                    MENJELASKAN, untuk memastikan kita sepenuhnya memahami semua aspeknya. Hal pertama yang kami
+                    perhatikan, adalah dapat menyertakan lebih dari satu baris. Kueri yang kami analisis melibatkan dua
+                    tabel dalam proses, yang digabungkan menggunakan gabungan dalam. Masing-masing tabel ini
+                    direpresentasikan dalam baris berbeda dalam rencana eksekusi di atas. Sebagai analogi dunia
+                    pengkodean, Anda dapat melihat konsep gabungan dalam sangat mirip dengan loop bersarang. MySQL
+                    memilih tabel yang menurutnya paling baik untuk memulai perjalanan ("loop" luar) dan kemudian
+                    menyentuh tabel berikutnya menggunakan nilai-nilai dari "loop" luar.
+                </p>
+
+                <h3>PostgreSQL</h3>
+
+                <p>
+                    EXPLAIN adalah pernyataan kembali rencana eksekusi yang dihasilkan untuk pernyataan yang diberikan.
+                    EXPLAIN ini menunjukkan bagaimana tabel yang terlibat dalam sebuah pernyataan akan dipindai oleh
+                    pemindaian indeks atau pemindaian sekuensial, dll., Dan jika beberapa tabel digunakan, jenis
+                    algoritme gabungan apa yang akan digunakan. Informasi paling penting dan berguna yang EXPLAIN
+                    dikembalikan pernyataan adalah biaya awal sebelum baris pertama dapat dikembalikan dan biaya total
+                    untuk mengembalikan kumpulan hasil lengkap.
+                    <br><br>
+                    Berikut ini adalah sintaks dari EXPLAIN pernyataan tersebut:
+                </p>
+
+                <img src="/assets/image/evaluation-plan-3.jpg" alt="" class="article-image">
+
+                <p>
+                    Dimana option bisa menjadi salah satu dari berikut ini:
+                </p>
+
+                <img src="/assets/image/evaluation-plan-4.jpg" alt="" class="article-image">
+
+                <p>
+                    Boolean menentukan apakah opsi yang dipilih harus diaktifkan atau dinonaktifkan. Anda dapat
+                    menggunakan TRUE, ON, atau 1 untuk mengaktifkan pilihan, dan FALSE, OFF, atau 0 untuk
+                    menonaktifkannya. Jika Anda menghilangkan boolean, defaultnya adalah ON.
+                </p>
+
+                <p>
+                    Di bagian ini, kami akan mendemonstrasikan pernyataan Explain PostgreSQL menggunakan contoh
+                    berdasarkan tabel penggajian.
+                    <br>
+                    Inilah kueri yang akan dianalisis:
+                </p>
+
+                <img src="/assets/image/evaluation-plan-5.jpg" alt="" class="article-image">
+
+                <p>
+                    Untuk melihat rencana kueri untuk kueri ini, gunakan yang berikut ini:
+                </p>
+
+                <img src="/assets/image/evaluation-plan-6.jpg" alt="" class="article-image">
+
+                <p>
+                    Outputnya akan terlihat seperti ini:
+                </p>
+
+                <img src="/assets/image/evaluation-plan-7.jpg" alt="" class="article-image">
+
+                <p>
+                    Menggunakan pernyataan EXPLAIN itu mudah; memahami rencana kueri yang dikembalikan sedikit lebih
+                    menantang. Dalam contoh ini, kita melihat bahwa start up cost adalah cost = 0.00 , max time
+                    25.00 dan rows 400.
+                </p>
+
+                <p>
+                    Untuk menjalankan rencana dan memeriksanya, gunakan perintah berikut:
+                </p>
+
+                <img src="/assets/image/evaluation-plan-8.jpg" alt="" class="article-image">
+
+                <p>
+                    Hasilnya:
+                </p>
+
+                <img src="/assets/image/evaluation-plan-9.jpg" alt="" class="article-image">
+
+                <p>
+                    Dalam contoh ini, kami menggunakan pernyataan EXPLAIN ANALYZE. Pernyataan ini tidak hanya menawarkan
+                    taksiran untuk metrik ini, tetapi juga memberikan waktu proses kueri yang sebenarnya. Tiga item
+                    penting yang ditunjukkan di atas adalah biaya awal, waktu maksimum, dan jumlah baris yang
+                    dikembalikan.
+                </p>
+
+                <p>
+                    Rencana eksekusi menceritakan start up cost adalah 0,024 , waktu maksimum adalah 0,027 , dan jumlah
+                    baris yang dikembalikan adalah 2.
+                </p>
+
+                <h3>SQL Server</h3>
+
+                <p>
+                    Proses eksekusi kueri menjalankan kueri sesuai langkah-langkah dalam rencana eksekusi SQL Server
+                    yang dihasilkan dalam proses pengoptimalan. Proses eksekusi kueri juga memvalidasi apakah rencana
+                    eksekusi valid atau tidak. Jika statistik berubah pada tabel yang merupakan bagian dari rencana
+                    eksekusi, maka proses eksekusi tidak akan mempertimbangkan rencana eksekusi tersebut dan pengoptimal
+                    akan menghasilkan rencana eksekusi baru. Untuk rencana eksekusi terbaik, disarankan untuk
+                    memperbarui statistik dan mengizinkan mesin database untuk menggunakan rencana eksekusi yang dibuat
+                    sebelumnya untuk kueri yang sama atau kumpulan pernyataan yang sama. Terkadang, kita dapat mengamati
+                    bahwa rencana eksekusi untuk beberapa kueri dibuat dalam waktu singkat dan untuk kueri lain
+                    membutuhkan waktu lebih lama. Setelah rencana eksekusi dibuat, itu disimpan dalam cache rencana yang
+                    merupakan bagian dari memori dan dengan menggunakan kembali rencana yang ada dapat mengurangi waktu
+                    eksekusi dan meningkatkan kinerja.
+                </p>
+
+                <h4>SHOWPLAN_TEXT</h4>
+
+                <p>
+                    Opsi ini mirip dengan perkiraan rencana eksekusi grafis, karena ini memberi Anda teks rencana
+                    eksekusi dan memberi Anda informasi tentang apa rencana eksekusi itu. Itu tidak memberi Anda
+                    embel-embel apa pun yang biasanya terkait dengan rencana eksekusi.
+                </p>
+
+                <img src="/assets/image/evaluation-plan-10.jpg" alt="" class="article-image">
+
+                <h4>SHOWPLAN_ALL</h4>
+
+                <p>
+                    Opsi ini mirip dengan perkiraan rencana eksekusi grafis, tetapi memiliki beberapa fitur tambahan
+                    yang menyertainya termasuk jenis operator fisik dan jenis operator logika.
+                </p>
+
+                <img src="/assets/image/evaluation-plan-11.jpg" alt="" class="article-image">
+
+                <h4>SHOWPLAN_XML</h4>
+
+                <img src="/assets/image/evaluation-plan-12.jpg" alt="" class="article-image">
+
+                <h3>Oracle</h3>
+
+                <p>
+                    The EXPLAIN PLAN menampilkan pernyataan yang dipilih oleh optimizer Oracle untuk SELECT, UPDATE,
+                    INSERT, dan DELETEpernyataan. Rencana eksekusi pernyataan adalah urutan operasi yang dilakukan
+                    Oracle untuk menjalankan pernyataan tersebut.
+                </p>
+
+                <p>
+                    Pohon sumber baris adalah inti dari rencana eksekusi. Ini menunjukkan informasi berikut:
+                </p>
+
+                <ol start="1" type="1">
+                    <li style="margin-top: 5px;">
+                        Urutan tabel yang direferensikan oleh pernyataan.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        Metode akses untuk setiap tabel yang disebutkan dalam pernyataan.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        Metode gabungan untuk tabel yang dipengaruhi oleh operasi gabungan dalam pernyataan.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        Operasi data seperti filter, pengurutan, atau agregasi.
+                    </li>
+                </ol>
+
+                <p>
+                    Selain pohon sumber baris, tabel rencana berisi informasi tentang berikut ini:
+                </p>
+
+                <ol start="1" type="1">
+                    <li style="margin-top: 5px;">
+                        Optimasi, seperti biaya dan kardinalitas setiap operasi.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        Mempartisi, seperti kumpulan partisi yang diakses.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        Eksekusi paralel, seperti metode distribusi input gabungan.
+                    </li>
+                </ol>
+
+                <p>
+                    Hasil EXPLAIN PLAN membiarkan kita menentukan apakah yang ditunjuk oleh optimizer rencana eksekusi
+                    tertentu, seperti, loop bersarang bergabung. Ini juga membantu kita untuk memahami keputusan
+                    pengoptimal, seperti mengapa pengoptimal memilih gabungan loop bersarang dan bukan gabungan hash,
+                    dan memungkinkan kita memahami kinerja kueri.
+                </p>
+
+                <p>
+                    EXPLAIN PLAN merupakan metode yang tidak memerlukan query dijalankan, sangat mengurangi waktu yang
+                    dibutuhkan untuk mendapatkan rencana eksekusi untuk berjalan lama query dibandingkan dengan
+                    AUTOTRACE.
+                </p>
+
+                <img src="/assets/image/evaluation-plan-13.jpg" alt="" class="article-image">
+
+                <p>
+                    Kemudian execution plan ditampilkan.
+                </p>
+
+                <img src="/assets/image/evaluation-plan-14.jpg" alt="" class="article-image">
+
+                <p>
+                    Jika beberapa orang mengakses tabel rencana yang sama, atau Anda ingin menyimpan riwayat rencana
+                    eksekusi, Anda harus menggunakan STATEMENT_ID. Ini mengaitkan ID yang ditentukan pengguna dengan
+                    setiap paket yang dapat digunakan saat mengambil data.
+                </p>
+
+                <img src="/assets/image/evaluation-plan-15.jpg" alt="" class="article-image">
             </article>
         </div>
 
