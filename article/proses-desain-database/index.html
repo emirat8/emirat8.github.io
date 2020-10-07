@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/script.js"></script>
+    <title>Proses Desain Database</title>
+</head>
+
+<body>
+    <header>
+        <div class="jumbotron">
+            <h1>EmiratZ</h1>
+            <figure>
+                <img src="/assets/image/LogoUH.png" />
+            </figure>
+            <p><i>It's something unpredictable, but in the end it's right.</i></p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="content">
+            <article id="proses-desain-database" class="card">
+                <h2>Proses Desain Database</h2>
+                <img src="/assets/image/designing-project.jpg" class="featured-image" alt="designing-project" />
+
+                <p>
+                    Database / basis data terdiri dari 2 kata, yaitu basis dan data. Basis kurang lebih dapat diartikan
+                    sebagai markas atau gudang, tempat bersarang/berkumpul. Sedangkan data adalah representasi fakta
+                    dunia nyata yang mewakili suatu objek seperti manusia, barang, hewan, peristiwa, konsep, atau
+                    keadaan
+                    yang direkam dalam bentuk angka, huruf, simbol, teks, gambar, bunyi, dan lain lain.
+                </p>
+
+                <p>
+                    Dalam artikel kali ini saya akan menjelaskan tentang proses desain sebuah database.
+                </p>
+
+                <h3>
+                    Tahap 1 : Koleksi dan analisa kebutuhan
+                </h3>
+
+                <p>
+                    Sebelum melakukan desain database, harus mengetahui dan menganalisa keinginan pemakai terhadap suatu
+                    database sedetail mungkin. Proses ini disebut koleksi dan analisa kebutuhan. Untuk menentukan
+                    kebutuhan, pertama kali harus
+                    diidentifikasi bagian lain dari sistem informasi yang berhubungan dengan sistem database. Termasuk
+                    di dalamnya pemakai dan aplikasi baru dan yang sudah ada, kemudian
+                    kebutuhan dikoleksi dan dianalisa. Aktifitas yang merupakan bagian dari tahap ini
+                    adalah:
+                </p>
+
+                <p>
+                <ol start="1" type="1">
+                    <li style="margin-top: 5px;">
+                        Area aplikasi mayor dan kelompok pemakai yang akan menggunakan database atau pekerjaan apa yang
+                        akan diakibatkan diidentifikasi.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        Dokumen yang sudah ada yang berhubungan dengan aplikasi dipelajari dan
+                        dianalisa. Dokumen lain seperti police manual, form, report dan diagram
+                        organisasi di-review untuk menentukan apakah terdapat tambahan pada koleksi
+                        kebutuhan dan spesifikasi proses.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        Lingkungan operasi saat ini dan rencana penggunaan informasi dipelajari.
+                        Termasuk di dalamnya analisa tipe transaksi dan frekuensi penggunaannya dan
+                        aliran informasi dalam sistem. Karakteristik geografi seperti pemakai, transaksi
+                        asli, tujuan pelaporan dipelajari. Data input dan output untuk transaksi ditentukan.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        Penulisan respon untuk menentukan pertanyaan terkadang dikelompokkan dari
+                        pemakai database potensial atau kelompok pemakai. Pertanyaan ini melibatkan
+                        prioritas pemakai dan tempat yang penting untuk suatu aplikasi. Individu
+                        dilakukan interview untuk menolong dalam memperoleh informasi yang
+                        berharga dan setting prioritas.
+                    </li>
+                </ol>
+                </p>
+
+                <p>
+                    Analisa kebutuhan dibawa ke user akhir atau pelanggan sistem database oleh
+                    tim ahli analis kebutuhan. Kebutuhan awal lebih informal, tidak lengkap, tidak
+                    konsisten dan sebagian tidak benar. Perlu pekerjaan yang lebih banyak untuk
+                    mentransformasi kebutuhan awal ke aplikasi yang lebih spesifik yang dapat digunakan
+                    oleh pengembangan sebagai langkah awal untuk menulis implementasi dan uji coba.
+                </p>
+
+                <p>
+                    Untuk transformasi kebutuhan ke struktur yang lebih baik, teknik spesifikasi
+                    kebutuhan digunakan. Misalnya OOA (object-oriented analysis) dan DFD (data flow diagram). Metode
+                    tersebut menggunakan teknik diagram untuk mengorganisasi dan
+                    menampilkan kebutuhan proses informasi. Dokumentasi tambahan dalam bentuk teks,
+                    tabel, grafik dan keputusan melengkapi diagram tersebut.
+                </p>
+
+                <h3>
+                    Tahap 2 : Desain Basis Data Konseptual
+                </h3>
+
+                <p>
+                    Tahap kedua dari perancangan database melibatkan dua aktifitas paralel.
+                    Aktifitas pertama yaitu desain skema konseptual, menentukan kebutuhan data yang
+                    dihasilkan pada tahap 1 dan menghasilkan skema database konseptual. Aktifitas
+                    kedua, desain transaksi dan aplikasi, menentukan analisa aplikasi database pada tahap
+                    1 dan menghasilkan spesifikasi level tinggi untuk aplikasi tersebut.
+                </p>
+
+                <h4>
+                    Tahap 2b : Desain Transaksi
+                </h4>
+
+                <p>
+                    Tujuan dari tahap 2b, dimana proses dilakukan paralel dengan tahap 2, untuk
+                    mendesain karaktersitik transaksi database yang diketahui (aplikasi) dengan cara
+                    DBMS-independent. Jika suatu sistem database dirancang, perancang sadar beberapa
+                    aplikasi yang diketahui (atau transaksi) yang akan dijalankan dalam database
+                    diimplementasikan. Bagian terpenting dari perancangan database adalah menentukan
+                    karakteristik fungsi transaksi tersebut sebelumnya dalam proses perancangan. Hal ini
+                    menjamin skema database akan memasukan semua informasi yang dibutuhkan oleh
+                    transaksi tersebut.
+                </p>
+
+                <h3>
+                    Tahap 3 : Pemilihan DBMS
+                </h3>
+
+                <p>
+                    Pemilihan DBMS berdasarkan beberapa faktor, beberapa hal teknis, ekonomi dan
+                    kebijakan organisasi. Faktor teknis berhubungan dengan ketepatan DBMS yang dipilih.
+                    Yang termasuk faktor teknis adalah tipe DBMS (relational, object-relational, object,
+                    lainnya), struktur penyimpan dan akses path yang didukung DBMS, ketersediaan antar
+                    muka pemakai dan pemrogram, tipe bahasa query tingkat tinggi, ketersediaan alat bantu
+                    pengembangan, kemampuan berhubungan dengan DBMS lain melalui media standart,
+                    pilihan arsitektur yang berhubungan dengan operator client-server dan lain sebagainya.
+                    Faktor non teknis termasuk di dalamnya status finansial dan dukungan organisasi
+                    terhadap vendor. Hal-hal yang harus dipertimbangkan secara ekonomi dan faktor
+                    organisasi adalah:
+                </p>
+
+                <p>
+                <ol start="1" type="1">
+                    <li style="margin-top: 5px;">
+                        <strong>Software acquisiton cost :</strong> Merupakan harga ”up-front” dalam pembelian perangkat
+                        lunak, termasuk pilihan bahasa, pilihan antar muka seperti form, menu dan antar
+                        muka Web berbasis GUI, pilihan recovery/backup, metode akses khusus dan
+                        dokumentasi. Versi DBMS yang tepat untuk sistem operasi harus dipilih.
+                        Biasanya alat bantu pengembangan, alat bantu desain dan dukungan bahasa
+                        tambahan tidak termasuk dalam harga dasar.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        <strong>Maintenance cost :</strong> Berhubungan dengan harga layanan pemeliharaan standart dari
+                        vendor dan untuk menjaga versi DBMS tetap up to date.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        <strong>Hardware acquisition cost :</strong> perangkat keras baru mungkin diperlukan, seperti
+                        memory, terminal, disk drive dan controller baru, atau penyimpan DBMS khusus.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        <strong>Database creation and conversion cost :</strong> Berhubungan dengan biaya pembuatan
+                        sistem database dari konversi sistem yang sudah ada ke perangkat lunak DBMS
+                        baru. Operasi sistem yang sudah ada dilakukan paralel dengaan sistem baru sampai
+                        semua aplikasi diimplementasikan penuh dan diuji coba.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        <strong>Personal cost :</strong> Akuisisi perangkat lunak DBMS untuk pertama kali oleh
+                        organisasi
+                        biasanya dilakukan dengan reorganisasi departemen data processing.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        <strong>Training cost :</strong> Karena DBMS biasanya berupa sistem komplek, personal harus
+                        ditraining menggunakan dan memprogram DBMS. Training diperlukan pada
+                        semua level, termasuk programming, pengembangan aplikasi dan administrasi
+                        database.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        <strong>Operating cost :</strong> Biaya operasi lanjutan dari sistem database biasanya tidak
+                        termasuk dalam evaluasi.
+                    </li>
+                </ol>
+                </p>
+
+                <p>
+                    Keuntungan DBMS tidak mudah diukur dan dihitung. DBMS mempunyai
+                    beberapa keuntungan dibandingkan sistem file, seperti mudah dalam penggunaan, konsolidasi informasi
+                    perusahaan yang lebih luas, ketersediaan data yang lebih luas, dan akses yang lebih cepat ke
+                    informan. Dengan akses berbasis Web, bagian data dapat dibuat akses global seperti pemakai luar.
+                    Keuntungan lainnya adalah mengurangi biaya pengembangan aplikasi, mengurangi redudancy data dan
+                    keamanan dan kontrol yang lebih baik. Database sudah digunakan pada banyak organisasi, keputusan
+                    berpindah dari aplikasi berbasis file ke database terpusat dikarenakan faktor-faktor berikut:
+                </p>
+
+                <p>
+                <ol start="1" type="1">
+                    <li style="margin-top: 5px;">
+                        <strong>Kompleksitas data :</strong> Relasi data menjadi lebih kompleks, memerlukan DBMS yang
+                        kuat.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        <strong>Sharing diantara aplikasi :</strong> Semakin besar sharing antar aplikasi, semakin
+                        banyak redundansi file
+                        dan lebih besar kebutuhan akan DBMS.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        <strong>Perumbuhan dan perubahan data secara dinamis :</strong> Jika data berubah secara
+                        konstan, lebih mudah
+                        untuk melakukan perubahan dengan DBMS dibandingkan dengan sistem file.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        <strong>Frekuensi permintaan ad hoc data :</strong> Sistem file tidak cukup tepat untuk
+                        penampilan data ad hoc.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        <strong>Volume data dan kebutuhan untuk kontrol :</strong> Volume data yang besar dan kebutuhan
+                        mengontrol
+                        memerlukan DBMS.
+                    </li>
+                </ol>
+                </p>
+
+                <p>
+                    Beberapa faktor ekonomi dan organisasi yang berakibat pemilihan suatu DBMS:
+                </p>
+
+                <p>
+                <ol start="1" type="1">
+                    <li style="margin-top: 5px;">
+                        <strong>Organization-wide adoption of a certain philosopy :</strong> Biasanya merupakan faktor
+                        dominan yang
+                        berakibat pada penerimaan model data (misalnya, relational versus obyek), vendor, metodologi
+                        pengembangan dan alat bantu (misalnya, penggunaan analisa berorientasi obyek dan alat bantu
+                        desain dan metodologi dibutuhkan oleh semua aplikasi baru.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        <strong>Familiarity of personnel with the system :</strong> Jika staff programming dalam
+                        organisasi familiar
+                        dengan DBMS tertentu, dapat mengurangi biaya training dan waktu pembelajaran.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        <strong>Availability of vendor service :</strong> Ketersediaan asisten vendor dalam pemecahan
+                        permasalahan dengan
+                        sistem sangat penting, karena perubahan dari non-DBMS ke lingkungan DBMS kebanyakan membutuhkan
+                        bantuan vendor pada awalnya.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        <strong>Frekuensi permintaan ad hoc data :</strong> Sistem file tidak cukup tepat untuk
+                        penampilan data ad hoc.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        <strong>Volume data dan kebutuhan untuk kontrol :</strong> Volume data yang besar dan kebutuhan
+                        mengontrol
+                        memerlukan DBMS.
+                    </li>
+                </ol>
+                </p>
+
+                <p>
+                    Beberapa DBMS sekarang mempunyai versi yang berjalan pada beberapa konfigurasi perangkat keras /
+                    perangkat lunak (platform). Kebutuhan aplikasi untuk backup, recovery, performansi, integritas dan
+                    keamanan harus juga dipertimbangkan. Beberapa DBMS sekarang dirancang sebagai solusi total untuk
+                    pemrosesan informasi dan manajemen sumber daya informasi yang diperlukan dalam organisasi.
+                    Kebanyakan vendor DBMS mengkombinasikan produk mereka dengan pilihan berikut:
+                </p>
+
+                <p>
+                <ol type="a">
+                    <li style="margin-top: 5px;">
+                        Editor teks dan browser
+                    </li>
+                    <li style="margin-top: 5px;">
+                        Pembangkit laporan dan daftar utilitas
+                    </li>
+                    <li style="margin-top: 5px;">
+                        Perangkat lunak komunikasi
+                    </li>
+                    <li style="margin-top: 5px;">
+                        Entri data dan menampilkan form, layar, dan menu dengan pengeditan otomatis
+                    </li>
+                    <li style="margin-top: 5px;">
+                        Alat bantu untuk mengakses World Wide Web
+                    </li>
+                    <li style="margin-top: 5px;">
+                        Alat bantu meerancang database grafis
+                    </li>
+                </ol>
+                </p>
+
+                <h3>
+                    Tahap 4 : Pemetaan Model Data (Desain Database Logika)
+                </h3>
+
+                <p>
+                    Tahap berikutnya dari perancangan database adalah membuat skema konseptual dan skema eksternal dalam
+                    model data dari DBMS terpilih dengan memetakan skema tersebut. Proses pemetaan dalam dua bentuk:
+                </p>
+
+                <p>
+                <ol start="1" type="1">
+                    <li style="margin-top: 5px;">
+                        <strong>System-independent mapping :</strong> Pada bentuk ini, pemetaan tidak mempertimbangkan
+                        karakteristik
+                        khusus datau kasus khusus yang diaplikasikan ke implementasi DBMS dari model data.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        <strong>Tailoring the schemas to aspecific DBMS :</strong> DBMS yang berbeda mengimplementasikan
+                        model data
+                        dengan menggunakan pemodelan khusus.
+                    </li>
+                </ol>
+                </p>
+
+                <p>
+                    Hasil dari tahap ini berupa pernyataan DDK dalam bahasa DBMS terpilih yang merupakan skema level
+                    konseptual dan eksternal dalam sistem basis data. Tetapi jika pernyataan DDL termasuk beberapa
+                    parameter rancangan fisik, spesifikasi DDL yang lengkap harus menuggu setelah tahap rancangan
+                    database fisik selesai. Beberapa alat bantu CASE (computer-assisted software engineering) otomatis
+                    dapat membangkitkan DDb untuk sistem komersial dari rancangan skema konseptual.
+                </p>
+
+                <h3>
+                    Tahap 5 : Desain Basis Data Fisik
+                </h3>
+
+                <p>
+                    Perancangan database fisik adalah proses memilih struktur penyimpan khusus dan mengakses path untuk
+                    file database untuk mendapatkan performansi yang baik pada aplikasi database. Setiap DBMS menawarkan
+                    berbagai pilihan organisasi file dan akses path. Termasuk di dalamnya berbagai tipe pengindeksan,
+                    clustering record yang berhubungan melalui pointer dan berbagai tipe hashing. Bila suatu DBMS
+                    dipilih, proses perancangan database fisik dibatasi pada struktur yang tepat utuk file database
+                    melalui pilihan yang ditawarkan DBMS. Kriteria berikut biasanya digunakan untuk menuntun pemilihan
+                    rancangan basis database fisik:
+                </p>
+
+                <p>
+                <ol start="1" type="1">
+                    <li style="margin-top: 5px;">
+                        <strong>Waktu respon :</strong> Merupakan waktu antara pengiriman transaksi database untuk
+                        eksekusi dan
+                        penerimaan respon.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        <strong>Utilitas ruang penyimpan :</strong> Merupakan jumlah ruang penyimpan yang digunakan file
+                        database dan
+                        struktur akses path pada disk, termasuk pengindeksan dan akses path lain.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        <strong>Transaction throughput :</strong> Merupakan jumlah transaksi rata-rata yang dapat
+                        diproses per menit,
+                        merupakan parameter kritis dari sistem transaksi seperti
+                        yang digunakan pada reservasi pesawat atau bank.
+                    </li>
+                </ol>
+                </p>
+
+                <h3>
+                    Tahap 6 : Implementasi Basis Data dan Tuning
+                </h3>
+
+                <p>
+                    Setelah rancangan logika dan fisik selesai, kita dapat mengimplementasikan sistem database. Hal ini
+                    merupakan tanggung jawab DBA bersama desainer database. Pernyataan dalam DDL (data definition
+                    language) termasuk SDL (storage definition language) dari DBMS terpilih dikompilasi dan digunakan
+                    untuk membuat skema database dan file database (kosong). Database dapat kemudian dipopulasikan
+                    dengan data. Jika data diubah dari sistem komputerisasi sebelumnya, rutin konversi diperlukan untuk
+                    format kembali data untuk menyimpan ke database baru.
+                </p>
+
+                <p>
+                    Transaksi database harus diimplementasikan dengan aplikasi yang dibuat programming berdasarkan
+                    spesifikasi konseptual dari transaksi dan kemudian menulis dan melakukan uji coba kode porgram
+                    dengan perintah DML. Jika transaksi siap dan data disimpan ke database, tahap rancangan dan
+                    implementasi selesai dan tahap operasi dari sistem database dimulai.
+                </p>
+
+            </article>
+        </div>
+
+        <aside>
+            <article class="profile card">
+                <header>
+                    <h2>Emirat Millenium Try</h2>
+                    <figure>
+                        <img src="/assets/image/ppweb.jpg" />
+                    </figure>
+                </header>
+                <section>
+                    <h3>Other Information</h3>
+                    <table>
+                        <tr>
+                            <th>Nationality</th>
+                            <td>Indonesia</td>
+                        </tr>
+                        <tr>
+                            <th>Place of Birth</th>
+                            <td>Makassar, Indonesia</td>
+                        </tr>
+                        <tr>
+                            <th>Age</th>
+                            <td>20 Years Old</td>
+                        </tr>
+                    </table>
+                </section>
+                <social>
+                    <a href="https://www.facebook.com/emirat8/" class="fa fa-facebook-square"></a>
+                    <a href="https://twitter.com/emirat8" class="fa fa-twitter"></a>
+                    <a href="https://www.instagram.com/emirat8/" class="fa fa-instagram"></a>
+                    <a href="mailto:emirat.millenium@yahoo.co.id" class="fa fa-envelope"></a>
+                </social>
+            </article>
+        </aside>
+        <a href="#top" onclick="scrollToTop();return false"><i class="fa fa-arrow-up"></i></a>
+    </main>
+    <footer>
+        <p>Made with ❤️ in Makassar</p>
+    </footer>
+</body>
+
+</html>
