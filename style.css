@@ -134,13 +134,11 @@ aside article social {
 
 /* Set a specific color for each brand */
 
-/* Facebook */
 .fa-facebook-square {
   background: #034694;
   color: white;
 }
 
-/* Twitter */
 .fa-twitter {
   background: #034694;
   color: white;
@@ -151,7 +149,7 @@ aside article social {
   color: white;
 }
 
-.fa-github {
+.fa-envelope {
   background: #034694;
   color: white;
 }
@@ -174,20 +172,11 @@ main div article readmore {
   text-align: right;
 }
 
-@media screen and (max-width: 1366px) {
-  #email {
-    font-size: small;
-  }
-}
-
 @media screen and (max-width: 1024px) {
   #content,
   aside {
     width: 100%;
     padding: 0;
-  }
-  #email {
-    font-size: medium;
   }
 }
 @media screen and (max-width: 1000px) {
@@ -196,17 +185,8 @@ main div article readmore {
   }
 }
 
-@media screen and (max-width: 380px) {
-  #email {
-    font-size: 15px;
-  }
-}
-
 @media screen and (max-width: 320px) {
   .fa {
     margin-left: 5px;
-  }
-  #email {
-    font-size: x-small;
   }
 }
