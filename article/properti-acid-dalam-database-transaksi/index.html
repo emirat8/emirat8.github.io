@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/script.js"></script>
+    <title>Properti ACID dalam Database Transaksi | EmiratZ</title>
+</head>
+
+<body>
+    <header>
+        <div class="jumbotron">
+            <h1>EmiratZ</h1>
+            <figure>
+                <img src="/assets/image/LogoUH.png" />
+            </figure>
+            <p><i>It's something unpredictable, but in the end it's right.</i></p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="content">
+            <article id="properti-acid-dalam-database-transaksi" class="card">
+                <h2>Properti ACID dalam Database Transaksi</h2>
+                <img src="/assets/image/transaksi.jpg" class="featured-image" alt="time" />
+
+                <p>
+                    Apa hubungan antara ACID dan transaksi basis data?
+                </p>
+
+                <p>
+                    Dalam database relasional, setiap pernyataan SQL harus dijalankan dalam lingkup transaksi.
+                </p>
+
+                <p>
+                    Tanpa mendefinisikan batas-batas transaksi secara eksplisit, database akan menggunakan transaksi
+                    implisit yang membungkus setiap pernyataan individu. Transaksi implisit dimulai sebelum pernyataan
+                    dieksekusi dan berakhir (komit atau kembalikan) setelah pernyataan dieksekusi. Mode transaksi
+                    implisit umumnya dikenal sebagai autocommit.
+                </p>
+
+                <p>
+                    Jadi, transaksi adalah kumpulan operasi baca / tulis yang berhasil hanya jika semua operasi yang
+                    terkandung berhasil.
+                </p>
+
+                <img src="/assets/image/ilustrasi-acid.jpg" alt="" class="article-image">
+
+                <p>
+                    Secara inheren transaksi ditandai oleh empat properti (biasanya disebut ACID):
+                </p>
+
+                <ul>
+                    <li>Atomicity</li>
+                    <li>Konsistensi</li>
+                    <li>Isolasi</li>
+                    <li>Daya tahan</li>
+                </ul>
+
+                <p>
+                    Apakah ACID memberikan transaksi basis data atau apakah itu hal yang sama?
+                </p>
+
+                <p>
+                    Untuk sistem basis data relasional, ini benar karena SQL Standard menetapkan bahwa transaksi harus
+                    memberikan jaminan ACID:
+                </p>
+
+                <h3>Atomicity</h3>
+
+                <p>
+                    Atomicity ditandai dengan semua unit proses dalam transaksi dieksekusi secara lengkap atau jika
+                    gagal maka digagalkan(di-rollback) secara utuh.
+                </p>
+
+                <h3>Consistency</h3>
+
+                <p>
+                    Consistency ditandai dengan data yang konsisten pada basis data.
+                </p>
+
+                <h3>Isolation</h3>
+
+                <p>
+                    Isolation ditandai dengan semua unit proses dalam transaksi dieksekusi terisolir mulai dari awal
+                    hingga akhir unit proses atau tanpa konkurensi pada unit proses.
+                </p>
+
+                <h3>Durability</h3>
+
+                <p>
+                    Durability ditandai dengan data yang diolah oleh transaksi yang sudah berakhir telah berhasil
+                    disimpan ke penyimpanan non-volatile(storage).
+                </p>
+
+                <h3>Keterkaitan antara properti</h3>
+
+                <p>
+                    <strong>Consistency</strong> adalah hasil dari properti <strong>Atomicity</strong>,
+                    <strong>Isolation</strong>, dan <strong>Durability</strong> yang berhasil dijaga dengan baik.
+                    Properti <strong>Atomicity</strong> dan <strong>Durability</strong> menjaga
+                    agar jangan sampai data yang disimpan ke storage merupakan data hasil dari transaksi yang unit
+                    prosesnya hanya berhasil sebagian (all or nothing).
+                </p>
+
+                <h3>Contoh Kasus</h3>
+                <p>Contoh kasus yang diambil adalah si A ingin membeli minuman di toko senilai Rp.
+                    20.000,-. Berikut adalah
+                    proses transaksinya: </p>
+                <ol>
+                    <code>
+                        <li>read(saldo_A)</li>
+                        <li>saldo_A := saldo_A - 20.000</li>
+                        <li>write(saldo_A)</li>
+                        <li>read(saldo_toko)</li>
+                        <li>saldo_toko := saldo_toko + 20.000</li>
+                        <li>write(saldo_toko)</li>
+                        </code>
+                </ol>
+
+                <h4>Berikut adalah penjelasan properti ACID yang terjadi pada proses transaksi di atas.</h4>
+
+                <ol>
+                    <h4>
+                        <li>Atomicity requirement
+                    </h4>
+                    <p>Jika transaksi gagal setelah langkah 3 dan sebelum langkah 6, maka semua langkah akan
+                        <i>di-rollback</i>. Transaksi dianggap batal dan uang akan kembali ke saldo A.</p>
+                    </li>
+
+                    <h4>
+                        <li>Consistency requirement
+                    </h4>
+
+                    <p>
+                        Jadi, jumlah saldo dikurangi jumlah
+                        pembelian harus sama dengan nilai tunai di tangan.
+                    </p>
+                    </li>
+
+                    <h4>
+                        <li>Isolation requirement
+                    </h4>
+                    <p>Isolasi dilakukan
+                        dengan menjalankan transaksi secara serial (satu demi satu). Jadi tidak boleh ada transaksi lain
+                        yang mengganggu transaksi pembelian minuman ini.</p>
+                    </li>
+
+                    <h4>
+                        <li>Durability requirement
+                    </h4>
+                    <p>Setelah transaksi berhasil diselesaikan (yaitu membayar Rp. 20.000,- telah dilakukan), perubahan
+                        yang dibuat ke dalam database harus bersifat
+                        permanen dan tahan lama meskipun ada kegagalan sistem.</p>
+                    </li>
+                </ol>
+
+            </article>
+        </div>
+
+        <aside>
+            <article class="profile card">
+                <header>
+                    <h2>Emirat Millenium Try</h2>
+                    <figure>
+                        <img src="/assets/image/ppweb.jpg" />
+                    </figure>
+                </header>
+                <section>
+                    <h3>Other Information</h3>
+                    <table>
+                        <tr>
+                            <th>Nationality</th>
+                            <td>Indonesia</td>
+                        </tr>
+                        <tr>
+                            <th>Place of Birth</th>
+                            <td>Makassar, Indonesia</td>
+                        </tr>
+                        <tr>
+                            <th>Age</th>
+                            <td>20 Years Old</td>
+                        </tr>
+                    </table>
+                </section>
+                <social>
+                    <a href="https://www.facebook.com/emirat8/" class="fa fa-facebook-square"></a>
+                    <a href="https://twitter.com/emirat8" class="fa fa-twitter"></a>
+                    <a href="https://www.instagram.com/emirat8/" class="fa fa-instagram"></a>
+                    <a href="mailto:emirat.millenium@yahoo.co.id" class="fa fa-envelope"></a>
+                </social>
+            </article>
+        </aside>
+        <a href="#top" onclick="scrollToTop();return false"><i class="fa fa-arrow-up"></i></a>
+    </main>
+    <footer>
+        <p>Made with ❤️ in Makassar</p>
+    </footer>
+</body>
+
+</html>
