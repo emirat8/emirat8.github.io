@@ -8,7 +8,7 @@ function scrollToTop() {
 }
 
 $(window).scroll(function () {
-    if ($(this).scrollTop() > 400) {
+    if ($(this).scrollTop() > 410) {
         $('.fa-arrow-up').show(300);
     }
     else {
