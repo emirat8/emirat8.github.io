@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/script.js"></script>
+    <title>Aplikasi Pemanfaatan Regular Expression (Regex) | EmiratZ</title>
+</head>
+
+<body>
+    <header>
+        <div class="jumbotron">
+
+            <figure>
+                <img src="/assets/image/logo.png" />
+            </figure>
+            <p><i>It's something unpredictable, but in the end it's right.</i></p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="content">
+            <article id="aplikasi-pemanfaatan-regular-expression-regex" class="card">
+                <h2>Aplikasi Pemanfaatan Regular Expression (Regex)</h2>
+                <img src="/assets/image/regex.jpeg" class="featured-image" alt="regex" />
+
+                <p>
+                    Kita akan menemukan bahwa <i>regular expression</i> dapat mendefinisikan bahasa yang persis sama
+                    yang
+                    dideskripsikan oleh berbagai bentuk automata: bahasa reguler. Namun, <i>regular expression</i>
+                    menawarkan
+                    sesuatu yang tidak dapat dilakukan automata: cara deklaratif untuk mengekspresikan string yang ingin
+                    kita terima. Jadi, <i>regular expression</i> berfungsi sebagai bahasa masukan untuk banyak sistem
+                    yang
+                    memproses string.
+                </p>
+
+                <p>
+                    Regex merupakan sebuah teks (string) yang mendefinisikan sebuah pola pencarian sehingga dapat
+                    membantu kita untuk melakukan matching (pencocokan), locate (pencarian), dan manipulasi teks.
+                </p>
+
+                <h3>Aplikasi Pemanfaatan</h3>
+
+                <h4>Regex untuk Validasi Data</h4>
+
+                <p>
+                    Pertama-tama, kita harus mendefinisikan pola regex untuk data yang valid. Kemudian, kita lakukan
+                    pencocokan dengan pola tersebut.
+                </p>
+
+                <img src="/assets/image/regex1.png" alt="" class="article-image">
+
+                <p>
+                    Perhatikan atribut <strong>pattern</strong>, atribut ini digunakan untuk menyimpan pola regex. Pada
+                    contoh di atas,
+                    polanya adalah pengecekan karakter yang diinputkan pada password.
+                </p>
+
+                <img src="/assets/image/regex2.png" alt="" class="article-image">
+
+                <h4>Regex untuk Find and Replace</h4>
+
+                <p>
+                    Saya ingin mengubah ini :
+                </p>
+
+                <img src="/assets/image/regex3.png" alt="" class="article-image">
+
+                <p>
+                    Menjadi ini :
+                </p>
+
+                <img src="/assets/image/regex4.png" alt="" class="article-image">
+
+                <br>
+
+                <p>
+                    Pola pencariannya adalah : <strong>(\{\{< fig) "(.+)" ( | \n)"(.+)" (>\}\})</strong>
+                </p>
+
+                <p>
+                    Dan pola untuk mengubahnya adalah : <strong>![$4]($2 "$4")</strong>
+                </p>
+                <br>
+                <p>
+                    Maka hasilnya :
+                </p>
+
+                <img src="/assets/image/regex7.png" alt="" class="article-image">
+                <br>
+                <p>
+                    Pada pola pencarian di atas, dilakukan pengelompokan atau grouping sebanyak lima kelompok. Lalu
+                    melakukan subtitusi atau replace.
+                </p>
+
+                <img src="/assets/image/regex8.png" alt="" class="article-image">
+            </article>
+        </div>
+
+        <aside>
+            <article class="profile card">
+                <header>
+                    <figure>
+                        <img src="/assets/image/ppweb.jpg" />
+                    </figure>
+                    <h2 style="margin-bottom: 0;">Emirat Millenium Try</h2>
+                    <h4 style="color: #6a7ab5; margin-top: 5px;">
+                        Student</h4>
+                </header>
+                <social>
+                    <a href="https://www.facebook.com/emirat8/" class="fa fa-facebook-square"></a>
+                    <a href="https://twitter.com/emirat8" class="fa fa-twitter"></a>
+                    <a href="https://www.instagram.com/emirat8/" class="fa fa-instagram"></a>
+                    <a href="mailto:emirat.millenium@yahoo.co.id" class="fa fa-inbox"></a>
+                </social>
+            </article>
+        </aside>
+        <a href="#top" onclick="scrollToTop();return false"><i class="fa fa-arrow-up"></i></a>
+    </main>
+    <footer>
+        <p>Made with ❤️ in Makassar</p>
+    </footer>
+</body>
+
+</html>
