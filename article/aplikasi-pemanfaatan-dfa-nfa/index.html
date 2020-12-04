@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/script.js"></script>
+    <title>Aplikasi Pemanfaatan DFA / NFA | EmiratZ</title>
+</head>
+
+<body>
+    <header>
+        <div class="jumbotron">
+
+            <figure>
+                <img src="/assets/image/logo.png" />
+            </figure>
+            <p><i>It's something unpredictable, but in the end it's right.</i></p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="content">
+            <article id="evaluation-plan" class="card">
+                <h2>Aplikasi Pemanfaatan DFA / NFA</h2>
+                <img src="/assets/image/dfanfa.jpg" class="featured-image" alt="dfanfa" />
+                <h3>Finite Automata</h3>
+
+                <p>
+                    <strong>Finite Automata</strong> adalah mesin utama dari suatu bahasa reguler. Finite Automata
+                    memiliki jumlah state
+                    yang banyaknya berhingga dan dapat berpindah-pindah dari suatu state ke state yang lainnya. Finite
+                    Automata dibagi atas dua, yaitu <strong>Deterministic Finite Automata (DFA)</strong> dan
+                    <strong>Non-Deterministic Finite
+                        Automata (NFA)</strong>.
+                </p>
+
+                <h4>Deterministic Finite Automata (DFA)</h4>
+
+                <p>
+                    Pada Deterministic Finite Automata, jika suatu state diberi inputan maka state tersebut akan selalu
+                    tepat menuju satu state.
+                </p>
+
+                <img src="/assets/image/dfanfa1.jpg" alt="" class="article-image">
+
+                <h4>Non-Deterministic Finite Automata (NFA)</h4>
+
+                <p>
+                    Jika suatu state diberi inputan maka mungkin saja bisa menuju ke beberapa state berikutnya.
+                </p>
+
+                <img src="/assets/image/dfanfa2.jpg" alt="" class="article-image">
+                <img src="/assets/image/dfanfa3.jpg" alt="" class="article-image">
+
+                <h4>Aplikasi Pemanfaatan : "Text Search"</h4>
+
+                <p>
+                    Aplikasi satu ini sangat cocok dengan pembahasan permasalahan mengenai DFA dan NFA dimana kita
+                    menentukan apakah beberapa bit yang digunakan berakhir pada 0 atau 1. Ini benar-benar model yang
+                    sangat bagus untuk beberapa permasalahan nyata yang muncul di aplikasi seperti pencari web dan
+                    ekstraksi informasi berdasarkan teks.
+                </p>
+
+                <p>
+                    Untuk Nondeterministic Finite Automata pada text search, jika dimisalkan kita diberikan beberapa set
+                    kata, dimana kita harus memanggil keywords dan kita ingin mencari peristiwa dari beberapa kata ini.
+                    Di aplikasi seperti ini, cara yang berguna untuk memproses adalah dengan mendesain NFA, yang tidak
+                    lain sinyal, cukup masuk pada state penerimaan, yang kemudian melihat keywords. Kemudian teks pada
+                    dokumen akan memproses, mendapatkan satu karakter dalam satu waktu, lalu kemudian mengenali kejadian
+                    dari keywords yang pada teks. Ini adalah form yang simpel untuk NFA dalam mengenali beberapa kata
+                    kunci.
+                </p>
+
+                <ol start="1" type="1">
+                    <li style="margin-top: 5px;">
+                        Terdapat state mulai dengan transisi itu sendiri pada setiap input simbol, seperti contoh,
+                        setiap printable karakter ASCII jika kita periksa maka secara intuitif, state mulai akan
+                        menampilkan “perkiraan” yang belum pasti memperlihatkan satu dari kata tersebut, meskipun kita
+                        melihat beberapa salah satu kata dari kelimat yang ada.
+                    </li>
+                    <li style="margin-top: 5px;">
+                        Untuk setiap keyword a1,a2…ak, terdapat k state, mari dikatakan sebagai q1, q2…qk. Terdapat
+                        transisi dari state mulai ke q1 berdasarkan simbol a1, transisi dari q1 ke q2 berdasarkan simbol
+                        a2, dan seterusnya. Untuk state qk meruapakan state penerimaan dan mengarahkan / menunjukkan
+                        bahwa keyword a1,a2…ak telah ditemukan.
+                    </li>
+                </ol>
+
+                <h4>Contoh DFA :</h4>
+
+                <p>
+                    Seperti yang kita ketahui, sebagai aturan DFA, kita hanya bisa berada di satu state dalam satu
+                    waktu.
+                </p>
+
+                <p>
+                    Jika dimisalkan kita ingin mendesain DFA untuk mengenali kejadian dari kata web dan ebay. Di sini,
+                    simbol “ ∑ ” adalah singkatan dari set input yang semua karakter ASCII yang dapat dicetak
+                    termasuk w, e, b, a, y. 0 adalah keadaan awal kita, artinya kita tidak memiliki apa pun yang kita
+                    mau. State 1 mengatakan bahwa kita memiliki "w". State 2 mengatakan bahwa kita memiliki "w" diikuti
+                    oleh "e" (we). State 3 memberi tahu kita memiliki "web", state ini adalah state yang diterima. State
+                    4 mengatakan bahwa kita memiliki "e". State 5 mengatakan bahwa kita memiliki "eb". State 6
+                    mengatakan bahwa kita memiliki "eba".
+                    State 7 mengatakan bahwa kita memiliki "ebay", ini juga merupakan state yang diterima.
+                </p>
+
+                <img src="/assets/image/dfanfa5.jpg" alt="" class="article-image">
+
+                <h4>Contoh NFA :</h4>
+
+                <p>
+                    Seperti yang kita ketahui, sebagai aturan NFA, kita bisa berada di beberapa state pada waktu
+                    tertentu.
+                </p>
+
+                <p>
+                    Jika dimisalkan kita ingin mendesain NFA untuk mengenali kejadian dari kata web dan ebay. Diagram
+                    transisi untuk NFA didesain menggunakan aturan pada gambar dibawah. State 1 adalah state mulai
+                    (permulaan), dan kita menggunakan (∑) yang berdiri sebagai set dari semua printable karakter ASCII.
+                    State 2 sampai 4 bertanggung jawab untuk mengenali web, sedangkan state 5 sampai 8 bertanggung jawab
+                    untuk mengenali ebay.
+                </p>
+
+                <img src="/assets/image/dfanfa4.jpg" alt="" class="article-image">
+
+            </article>
+        </div>
+
+        <aside>
+            <article class="profile card">
+                <header>
+                    <figure>
+                        <img src="/assets/image/ppweb.jpg" />
+                    </figure>
+                    <h2 style="margin-bottom: 0;">Emirat Millenium Try</h2>
+                    <h4 style="color: #6a7ab5; margin-top: 5px;">
+                        Student</h4>
+                </header>
+                <social>
+                    <a href="https://www.facebook.com/emirat8/" class="fa fa-facebook-square"></a>
+                    <a href="https://twitter.com/emirat8" class="fa fa-twitter"></a>
+                    <a href="https://www.instagram.com/emirat8/" class="fa fa-instagram"></a>
+                    <a href="mailto:emirat.millenium@yahoo.co.id" class="fa fa-inbox"></a>
+                </social>
+            </article>
+        </aside>
+        <a href="#top" onclick="scrollToTop();return false"><i class="fa fa-arrow-up"></i></a>
+    </main>
+    <footer>
+        <p>Made with ❤️ in Makassar</p>
+    </footer>
+</body>
+
+</html>
