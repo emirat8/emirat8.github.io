@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/script.js"></script>
+    <title>Aplikasi Pemanfaatan Context Free Grammar | EmiratZ</title>
+</head>
+
+<body>
+    <header>
+        <div class="jumbotron">
+
+            <figure>
+                <img src="/assets/image/logo.png" />
+            </figure>
+            <p><i>It's something unpredictable, but in the end it's right.</i></p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="content">
+            <article id="aplikasi-pemanfaatan-context-free-grammar" class="card">
+                <h2>Aplikasi Pemanfaatan Context Free Grammar</h2>
+                <img src="/assets/image/cfg.jpg" class="featured-image" alt="cfg" />
+
+                <p>
+                    Context Free Grammar atau yang biasa disingkat CFG merupakan tata bahasa formal di mana setiap
+                    aturan produksi adalah dalam bentuk A → B dimana A adalah pemroduksi dan B adalah hasil produksi .
+                    Batasannya hanyalah ruas kiri adalah sebuah simbol variabel dan ruas kanan dapat berupa terminal,
+                    simbol, variabel ataupun ε. Sehingga, dapat disimpulkan bahwa Context Free Grammar merupakan tata
+                    bahasa dimana tidak terdapat pembatasan pada hasil produksinya. Contoh aturan produksi yang termasuk
+                    CFG seperti berikut :
+                </p>
+
+                <ol style="list-style: none;">
+                    <li style="margin-top: 5px;">
+                        X → bY | Za
+                    </li>
+                    <li style="margin-top: 5px;">
+                        Y → aY | b
+                    </li>
+                    <li style="margin-top: 5px;">
+                        Z → bZ | ε
+                    </li>
+                </ol>
+
+                <p>
+                    CFG juga merupakan tata bahasa yang mempunyai tujuan sama seperti tata bahasa reguler yaitu untuk
+                    menunjukkan bagaimana menghasilkan suatu untai-untai dalam sebuah bahasa.
+                </p>
+
+                <p>
+                    Untuk menggambarkan simbol-simbol variabel menjadi simbol terimnal ialah dengan menggunakan pohon
+                    penurunan atau yang biasa disebut dengan derivation tree/parse tree dimana cara ini berarti setiap
+                    simbol variabel akan diturunkan menjadi terminal sampai tidak ada yang bisa tergantikan.
+                </p>
+
+                <p>
+                    Sebagai contoh, terdapat CFG dengan aturan produksi sebagai berikut dengan simbol awal S :
+                </p>
+
+                <ol style="list-style: none;">
+                    <li style="margin-top: 5px;">
+                        S → aAB
+                    </li>
+                    <li style="margin-top: 5px;">
+                        A → bBb
+                    </li>
+                    <li style="margin-top: 5px;">
+                        B → A | λ
+                    </li>
+                </ol>
+
+                <p>
+                    Maka, pohon penurunannya seperti ini :
+                </p>
+
+                <img src="/assets/image/cfg1.jpeg" alt="" class="article-image">
+
+                <p>
+                    Suatu context-free grammar (CFG) G bersifat ambigu jika sejumlah string w ∈ L(G) berasal dari dua
+                    atau lebih pohon turunan. Dengan kata lain, Suatu context-free grammar G bersifat ambigu jika
+                    sejumlah string w ∈ L(G) memiliki :
+                </p>
+
+                <ol>
+                    <li style="margin-top: 5px;">
+                        Dua atau lebih turunan kiri (leftmost derivation).
+                    </li>
+                    <li style="margin-top: 5px;">
+                        Dua atau lebih turunan kanan (rightmost derivation).
+                    </li>
+                </ol>
+
+                <p>
+                    Keambiguan untuk sebuah bahasa pemrograman merupakan sesuatu yang cukup buruk, oleh karena itu
+                    seorang programmer harus dapat menghindari keambiguan.
+                </p>
+
+                <h3>
+                    Penyederhanaan Context Free Grammar
+                </h3>
+
+                <p>
+                    Penyederhanaan tata bahasa bebas konteks dilakukan sebagai pembatasan sehingga nantinya tidak
+                    menghasilkan pohon penurunan yang memiliki kerumitan yang tak perlu atau aturan produksi yang tak
+                    berarti . contohnya. Terdapat tata bahasa bebas konteks dengan aturan produksi :
+                </p>
+
+                <ol style="list-style: none;">
+                    <li style="margin-top: 5px;">
+                        S → A
+                    </li>
+                    <li style="margin-top: 5px;">
+                        A → B
+                    </li>
+                    <li style="margin-top: 5px;">
+                        B → C
+                    </li>
+                    <li style="margin-top: 5px;">
+                        C → D
+                    </li>
+                    <li style="margin-top: 5px;">
+                        D → a | A
+                    </li>
+                </ol>
+
+                <p>
+                    Dari aturan produksi di atas, path yang dilalui dirasa terlalu panjang, dan D → A menyebabkan
+                    kerumitan atau redundant. Dengan begitu hal tersebut perlu disederhanakan. Suatu tata bahasa bebas
+                    konteks dapat disederhanakan dengan melakukan :
+                </p>
+
+                <ol>
+                    <li style="margin-top: 5px;">
+                        Penghilangan produksi useless
+                        <br>
+                        Produksi useless didefinisikan sebagai produksi yang memuat variabel yang tidak memiliki
+                        penurunan yang akan menghasilkan terminal-terminal seluruhnya. Produksi ini tidak berguna
+                        karena bila diturunankan tidak akan pernah selesai (masih ada symbol variabel yang tersisa),
+                        sehingga produksi itu berlebihan.
+
+                    </li>
+                    <li style="margin-top: 5px;">
+                        Penghilangan produksi unit
+                        <br>
+                        Produksi unit adalah produksi dimana ruas kiri dan ruas kanan aturan produksi hanya berupa satu
+                        simbol variabel
+                    </li>
+                    <li style="margin-top: 5px;">
+                        Penghilangan produksi ε
+                        <br>
+                        Produksi ε adalah produksi dalam bentuk α→ε (nullable). Penghilangan produksi ε dilakukan dengan
+                        melakukan penggantian produksi yang memuat variabel yang bisa menuju produksi ε.
+                    </li>
+                </ol>
+
+                <h3>Aplikasi Context Free Grammar</h3>
+
+                <p>
+                    Terinspirasi dari bahasa natural manusia, ilmuwan-ilmuwan ilmu komputer yang mengembangkan bahasa
+                    pemrograman, turut serta memberikan tata bahasa secara formal. Tata bahasa ini diciptakan secara
+                    bebas konteks dan disebut CFG (Context Free Grammar). Semula CFG ditemukan untuk membantuk
+                    menspesifikasikan bahasa manusia dan ternyata sangat cocok untuk mendefinisikan bahasa komputer,
+                    memformulasikan pengertian parsing, menyederhanakan penerjemahan bahasa komputer dan
+                    aplikasi-aplikasi pengolahan string lainnya. Context Free Grammar digunakan untuk menspesifikasikan
+                    struktur sintaks bahasa pemrograman serta beragam basis data.
+                </p>
+
+                <p>
+                    CFG juga berupa sekumpulan berhingga variabel yang juga disebut nonterminal atau kategori sintaks,
+                    dimana masing-masing merepresentasikan bahasa. Bahasa-bahasa yang direpresentasikan dengan
+                    variabel-variabel itu dideskripsikan secara rekursif dalam bentukan lain dan simbol-simbol primitif
+                    disebut terminal. Aturan-aturan yang berhubungan dengan variabel-variabel itu disebut produksi.
+                </p>
+
+                <p>
+                    Contoh penggunaan Context Free Grammar adalah pada dokumen HTML yang selalu
+                    menyertakan tag-tag berpasangan secara lengkap. Contoh pada struktur HTML sebagai berikut:
+                </p>
+
+                <img src="/assets/image/cfg2.jpg" alt="" class="article-image" style="width: 50%;">
+
+                <p>
+                    Setiap tag selalu berpasangan dengan tag yang sama namun dengan panembahan "/" di
+                    depannya. Pola-pola ini serupa pasangan kurung. Dengan demikian, pengenalan
+                    string-string yang termasuk dalam Context Free Grammar (CFG) merupakan salah satu tugas yang
+                    dilakukan web browser.
+                </p>
+
+            </article>
+        </div>
+
+        <aside>
+            <article class="profile card">
+                <header>
+                    <figure>
+                        <img src="/assets/image/ppweb.jpg" />
+                    </figure>
+                    <h2 style="margin-bottom: 0;">Emirat Millenium Try</h2>
+                    <h4 style="color: #6a7ab5; margin-top: 5px;">
+                        Student</h4>
+                </header>
+                <social>
+                    <a href="https://www.facebook.com/emirat8/" class="fa fa-facebook-square"></a>
+                    <a href="https://twitter.com/emirat8" class="fa fa-twitter"></a>
+                    <a href="https://www.instagram.com/emirat8/" class="fa fa-instagram"></a>
+                    <a href="mailto:emirat.millenium@yahoo.co.id" class="fa fa-inbox"></a>
+                </social>
+            </article>
+        </aside>
+        <a href="#top" onclick="scrollToTop();return false"><i class="fa fa-arrow-up"></i></a>
+    </main>
+    <footer>
+        <p>Made with ❤️ in Makassar</p>
+    </footer>
+</body>
+
+</html>
