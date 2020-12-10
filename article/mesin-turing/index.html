@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/script.js"></script>
+    <title>Mesin Turing | EmiratZ</title>
+</head>
+
+<body>
+    <header>
+        <div class="jumbotron">
+
+            <figure>
+                <img src="/assets/image/logo.png" />
+            </figure>
+            <p><i>It's something unpredictable, but in the end it's right.</i></p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="content">
+            <article id="mesin-turing" class="card">
+                <h2>Mesin Turing</h2>
+                <img src="/assets/image/turing.jpg" class="featured-image" alt="turing" />
+
+                <p>Mesin Turing adalah perangkat penerima yang menerima bahasa (kumpulan yang dapat dihitung secara
+                    rekursif) yang dihasilkan oleh tata bahasa tipe 0. Mesin ini ditemukan pada tahun 1936 oleh Alan
+                    Turing.
+                    Mesin Turing adalah model matematika yang terdiri dari pita panjang tak terbatas yang dibagi
+                    menjadi sel-sel tempat input diberikan.
+                </p>
+
+                <p>
+                    Mesin Turing terdiri dari pita (<i>tape</i>) dengan panjang tak terbatas tempat operasi baca dan
+                    tulis dapat dilakukan. Pita itu terdiri dari sel tak terbatas di mana setiap sel berisi simbol
+                    masukan atau simbol khusus yang disebut kosong. Ini juga terdiri dari penunjuk kepala yang menunjuk
+                    ke sel yang saat ini sedang dibaca dan dapat bergerak di kedua arah.
+                </p>
+
+                <img src="/assets/image/turing1.png" alt="" class="article-image">
+
+                <ol>
+                    <li><b>Q</b> adalah himpunan keadaan yang terbatas.</li>
+                    <li><b>T</b> adalah tape alphabet (simbol yang dapat ditulis pada tape).</li>
+                    <li><b>B</b> adalah simbol kosong (setiap sel diisi dengan B kecuali alfabet masukan pada awalnya).
+                    </li>
+                    <li><b>&Sigma;</b> adalah alfabet masukan (simbol yang merupakan bagian dari alfabet masukan).</li>
+                    <li><b>&delta;</b> adalah fungsi transisi yang memetakan Q × T → Q × T × {L, R}. Bergantung pada
+                        status saat ini dan alfabet pita saat ini (ditunjukkan oleh penunjuk kepala), ia akan berpindah
+                        ke status baru, mengubah simbol pita (mungkin atau mungkin tidak) dan memindahkan penunjuk
+                        kepala ke kiri atau kanan.</li>
+                    <li><b>q0</b> adalah status awal.</li>
+                    <li><b>F</b> dalah himpunan keadaan akhir. Jika ada status F tercapai, string input diterima.</li>
+                </ol>
+
+                <h3>Contoh Mesin Turing</h3>
+                <p>Agar lebih paham dengan Mesin Turing, berikut adalah contohnya.</p>
+
+                <p>Buatlah Mesin Turing untuk L = {0<sup>n</sup>1<sup>n</sup> | n &ge; 1}</p>
+
+                <ul>
+                    <li>Q = {q0, q1, q2, q3}, di mana q1 adalah initial state</li>
+                    <li>T = {0, 1, X, Y, B}, di mana B merepresentasikan simbol kosong</li>
+                    <li>&Sigma; = {0, 1}</li>
+                    <li>F = {q3}</li>
+                </ul>
+
+                <p>Maka fungsi transaksi &delta; menjadi tabel di bawah ini: </p>
+
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>0</th>
+                        <th>1</th>
+                        <th>X</th>
+                        <th>Y</th>
+                        <th>B</th>
+                    </tr>
+
+                    <tr>
+                        <td><b>q0</b></td>
+                        <td>(q1, X, R)</td>
+                        <td></td>
+                        <td></td>
+                        <td>(q3, Y, R)</td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td><b>q1</b></td>
+                        <td>(q1, 0, R)</td>
+                        <td>(q2, Y, L)</td>
+                        <td></td>
+                        <td>(q1, Y, R)</td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td><b>q2</b></td>
+                        <td>(q2, 0, L)</td>
+                        <td></td>
+                        <td>(q0, X, R)</td>
+                        <td>(q2, Y, L)</td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td><b>q3</b></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>(q3, Y, R)</td>
+                        <td><b>Halt</b></td>
+                    </tr>
+                </table>
+
+                <p>Mari kita coba bagaimana Mesin Turing bekerja dengan input 0011. Permulaainya dimulai dari 0 yang
+                    ditebali berwarna merah.</p>
+
+                <table>
+                    <td>B</td>
+                    <td style="color: red;"><b><u>0</u></b></td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>B</td>
+                </table>
+
+                <p>Penyelesaian :</p>
+
+                <ol>
+                    <li>Langkahnya adalah &delta; (q0, 0) = (q1, X, R). Artinya, ia akan pergi ke status q1, ganti 0
+                        dengan X dan kepala akan bergerak ke kanan sebagai:
+                        <table>
+                            <td>B</td>
+                            <td>X</td>
+                            <td style="color: red;"><b><u>0</u></b></td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>B</td>
+                        </table>
+                    </li>
+
+                    <li style="margin-top: 30px;">Perpindahan akan menjadi &delta; (q1, 0) = (q1, 0, R) yang berarti ia
+                        akan tetap dalam keadaan
+                        yang sama dan tanpa mengubah simbol apapun, ia akan bergerak ke kanan seperti:
+                        <table>
+                            <td>B</td>
+                            <td>X</td>
+                            <td>0</td>
+                            <td style="color: red;"><b><u>1</u></b></td>
+                            <td>1</td>
+                            <td>B</td>
+                        </table>
+                    </li>
+
+                    <li style="margin-top: 30px;">Perpindahannya menjadi &delta; (q1, 1) = (q2, Y, L) yang artinya akan
+                        berpindah ke keadaan q2
+                        dan ubah 1 menjadi Y, maka akan berpindah ke kiri seperti:
+                        <table>
+                            <td>B</td>
+                            <td>X</td>
+                            <td style="color: red;"><b><u>0</u></b></td>
+                            <td>Y</td>
+                            <td>1</td>
+                            <td>B</td>
+                        </table>
+                    </li>
+
+                    <li style="margin-top: 30px;">Perpindahannya menjadi &delta; (q2, 0) = (q2, 0, L) yang artinya akan
+                        berpindah ke keadaan q2
+                        dan ubah 0 menjadi 0, maka akan berpindah ke kiri seperti:
+                        <table>
+                            <td>B</td>
+                            <td style="color: red;"><b><u>X</u></b></td>
+                            <td>0</td>
+                            <td>Y</td>
+                            <td>1</td>
+                            <td>B</td>
+                        </table>
+                    </li>
+
+                    <li style="margin-top: 30px;">Perpindahannya menjadi &delta; (q2, X) = (q0, X, R) yang artinya akan
+                        berpindah ke keadaan q0
+                        dan ubah X menjadi X, maka akan berpindah ke kanan seperti:
+                        <table>
+                            <td>B</td>
+                            <td>X</td>
+                            <td style="color: red;"><b><u>0</u></b></td>
+                            <td>Y</td>
+                            <td>1</td>
+                            <td>B</td>
+                        </table>
+                    </li>
+
+                    <li style="margin-top: 30px;">Perpindahannya menjadi &delta; (q0, 0) = (q1, X, R) yang artinya akan
+                        berpindah ke keadaan q1
+                        dan ubah 0 menjadi X, maka akan berpindah ke kanan seperti:
+                        <table>
+                            <td>B</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td style="color: red;"><b><u>Y</u></b></td>
+                            <td>1</td>
+                            <td>B</td>
+                        </table>
+                    </li>
+
+                    <li style="margin-top: 30px;">Perpindahannya menjadi &delta; (q1, Y) = (q1, Y, R) yang artinya akan
+                        berpindah ke keadaan q1
+                        dan ubah Y menjadi Y, maka akan berpindah ke kanan seperti:
+                        <table>
+                            <td>B</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>Y</td>
+                            <td style="color: red;"><b><u>1</u></b></td>
+                            <td>B</td>
+                        </table>
+                    </li>
+
+                    <li style="margin-top: 30px;">Perpindahannya menjadi &delta; (q1, 1) = (q2, Y, L) yang artinya akan
+                        berpindah ke keadaan q2
+                        dan ubah 1 menjadi Y, maka akan berpindah ke kiri seperti:
+                        <table>
+                            <td>B</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td style="color: red;"><b><u>Y</u></b></td>
+                            <td>Y</td>
+                            <td>B</td>
+                        </table>
+                    </li>
+
+                    <li style="margin-top: 30px;">Perpindahannya menjadi &delta; (q2, Y) = (q2, Y, L) yang artinya akan
+                        berpindah ke keadaan q2
+                        dan ubah Y menjadi Y, maka akan berpindah ke kiri seperti:
+                        <table>
+                            <td>B</td>
+                            <td>X</td>
+                            <td style="color: red;"><b><u>X</u></b></td>
+                            <td>Y</td>
+                            <td>Y</td>
+                            <td>B</td>
+                        </table>
+                    </li>
+
+                    <li style="margin-top: 30px;">Perpindahannya menjadi &delta; (q2, X) = (q0, X, R) yang artinya akan
+                        berpindah ke keadaan q0
+                        dan ubah X menjadi X, maka akan berpindah ke kanan seperti:
+                        <table>
+                            <td>B</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td style="color: red;"><b><u>Y</u></b></td>
+                            <td>Y</td>
+                            <td>B</td>
+                        </table>
+                    </li>
+
+                    <li style="margin-top: 30px;">Perpindahannya menjadi &delta; (q0, Y) = (q3, Y, R) yang artinya akan
+                        berpindah ke keadaan q3
+                        dan ubah Y menjadi Y, maka akan berpindah ke kanan seperti:
+                        <table>
+                            <td>B</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>Y</td>
+                            <td style="color: red;"><b><u>Y</u></b></td>
+                            <td>B</td>
+                        </table>
+                    </li>
+
+                    <li style="margin-top: 30px;">Perpindahannya menjadi &delta; (q3, Y) = (q3, Y, R) yang artinya akan
+                        berpindah ke keadaan q3
+                        dan ubah Y menjadi Y, maka akan berpindah ke kanan seperti:
+                        <table>
+                            <td>B</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>Y</td>
+                            <td>Y</td>
+                            <td style="color: red;"><b><u>B</u></b></td>
+                        </table>
+                    </li>
+
+                    <li style="margin-top: 30px;">Menggunakan gerakan &delta; (q3, B) = <strong>Halt</strong>, itu akan
+                        berhenti dan
+                        diterima.</li>
+                </ol>
+
+                <p>Seperti itulah contoh dari Mesin Turing. Jika masih belum paham, coba dipahami perlahan-lahan.
+                </p>
+
+                <h3>Mengapa Mesin Turing Penting?</h3>
+
+                <p>
+                <p>Turing tidak menemukan mesin. Turing datang dengan model abstrak untuk semua mesin. Dengan kata lain,
+                    algoritma apa pun dapat dibuat di Mesin Turing.</p>
+
+                <p>Ini adalah deskripsi teoretis tentang komputer. Untuk itulah Turing menggunakan Mesin Turing. Dia
+                    memikirkannya sehingga dia bisa membuktikan properti hal-hal yang dapat dihitung secara umum.
+                    Sebelumnya, kami tidak benar-benar tahu apa-apa tentang batasan algoritma. Kami tidak tahu persis
+                    apa yang bisa dihitung.</p>
+
+                <p>Yang keren adalah penemuan luar biasa ini hanyalah produk sampingan dari Turing yang mencoba menjawab
+                    beberapa pertanyaan matematika fundamental, tetapi dalam prosesnya dia menciptakan dasar dari semua
+                    komputer yang kita gunakan saat ini.</p>
+
+                <p>Ini semua terdengar bagus bagi kami yang duduk di sini membaca ini di komputer tujuan umum kami.
+                    Namun perlu diingat bahwa Turing menulis ini pada tahun 1936. Ini sebelum komputer yang dapat
+                    diprogram. Faktanya, pada saat itu, "komputer" mengacu pada seseorang, bukan mesin. Dan pemikiran
+                    pada saat itu adalah bahwa komputer hanya dapat dibuat untuk satu tugas. Tapi Turing percaya
+                    sebaliknya. Dia percaya bahwa Anda dapat membuat satu mesin yang dapat diprogram untuk melakukan
+                    tugas apa pun. Ternyata itu benar, karena Anda sedang menggunakan salah satunya.</p>
+
+                <p style="text-align: center; color: #034694;"><strong><i>Adanya mesin-mesin dengan sifat ini mempunyai
+                            konsekuensi penting
+                            bahwa,
+                            selain pertimbangan kecepatan, berbagai mesin baru tidak perlu dirancang untuk melakukan
+                            berbagai
+                            proses komputasi. Semuanya dapat dilakukan dengan satu komputer digital, yang diprogram
+                            secara
+                            sesuai untuk setiap kasus.</i> - Turing, 1950.</strong></p>
+                </p>
+            </article>
+        </div>
+
+        <aside>
+            <article class="profile card">
+                <header>
+                    <figure>
+                        <img src="/assets/image/ppweb.jpg" />
+                    </figure>
+                    <h2 style="margin-bottom: 0;">Emirat Millenium Try</h2>
+                    <h4 style="color: #6a7ab5; margin-top: 5px;">
+                        Student</h4>
+                </header>
+                <social>
+                    <a href="https://www.facebook.com/emirat8/" class="fa fa-facebook-square"></a>
+                    <a href="https://twitter.com/emirat8" class="fa fa-twitter"></a>
+                    <a href="https://www.instagram.com/emirat8/" class="fa fa-instagram"></a>
+                    <a href="mailto:emirat.millenium@yahoo.co.id" class="fa fa-inbox"></a>
+                </social>
+            </article>
+        </aside>
+        <a href="#top" onclick="scrollToTop();return false"><i class="fa fa-arrow-up"></i></a>
+    </main>
+    <footer>
+        <p>Made with ❤️ in Makassar</p>
+    </footer>
+</body>
+
+</html>

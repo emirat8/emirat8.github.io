@@ -171,6 +171,19 @@ main div article readmore {
   text-align: right;
 }
 
+table{
+	width: auto;
+	border: 5px solid #034694;
+	border-collapse: collapse;
+	margin-top: 20px;
+}
+
+tr, th, td{
+	border: 1px solid #034694;
+	line-height: 20pt;
+	padding:0 10px 0 10px;
+}
+
 @media screen and (max-width: 1024px) {
   #content,
   aside {
